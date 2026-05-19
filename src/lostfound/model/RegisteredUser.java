@@ -24,7 +24,7 @@ public class RegisteredUser extends User {
     }
 
     public void setAddress(String address) {
-        this.address = (address != null) ? address.trim() : "";
+        this.address = (address != null) ? address.trim() : ""; //address.trim();remove spaces, "" assign blank string
     }
 
     public ItemLost reportLostItem(String itemName, String description,
