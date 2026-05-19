@@ -90,7 +90,7 @@ class CampusLostFoundSystem {
         String email = readLine("Email: ").trim().toLowerCase();
         String password = readLine("Password: ");
 
-        User user = findUserByEmail(email);
+        User user = findUserByEmail(email); //UPCASTING 
         if (user == null || !user.verifyPassword(password)) {
             System.out.println("Login failed. Check email and password.");
             return;
@@ -99,9 +99,9 @@ class CampusLostFoundSystem {
         session.login(user);
         System.out.println("Welcome, " + user.getName() + " (" + user.getRole() + ").");
         if (user instanceof Staff) {
-            adminMenu((Staff) user);
+            adminMenu((Staff) user); //DOWNCASTING 
         } else {
-            userMenu((RegisteredUser) user);
+            userMenu((RegisteredUser) user); //DOWNCASTING
         }
     }
 
@@ -419,10 +419,10 @@ class CampusLostFoundSystem {
 
         int index = 0;
         for (int i = 0; i < counts[LOST_COUNT]; i++) {
-            allItems[index++] = lostItems[i];
+            allItems[index++] = lostItems[i]; //UPCASTING 
         }
         for (int i = 0; i < counts[FOUND_COUNT]; i++) {
-            allItems[index++] = foundItems[i];
+            allItems[index++] = foundItems[i]; //UPCASTING 
         }
         for (int i = 0; i < counts[CLAIM_COUNT]; i++) {
             allClaims[i] = claims[i];
