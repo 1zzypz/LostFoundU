@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 public abstract class User {
-
+    //Encapsulation principle. fields aare private, object is declared as private
     private String userID;
     private String name;
     private String email;
