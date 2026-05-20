@@ -89,7 +89,7 @@ public class Staff extends User implements Reportable {
 
     @Override
     public String getRole() {
-        return "Admin";
+        return "Staff";
     }
 
     @Override

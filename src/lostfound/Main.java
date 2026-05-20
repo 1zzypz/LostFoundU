@@ -99,7 +99,7 @@ class CampusLostFoundSystem {
         session.login(user); //start login for this session 
         System.out.println("Welcome, " + user.getName() + " (" + user.getRole() + ").");
         if (user instanceof Staff) {
-            adminMenu((Staff) user); //DOWNCASTING, display different menus for user
+            staffMenu((Staff) user); //DOWNCASTING, display different menus for user
         } else {
             userMenu((RegisteredUser) user); //DOWNCASTING
         }
