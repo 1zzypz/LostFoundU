@@ -57,7 +57,7 @@ public class ItemFound extends Item {
     public String trackStatus() {
         switch (getStatus()) {
             case STATUS_SUBMITTED:
-                return "Awaiting admin verification.";
+                return "Awaiting staff verification.";
             case STATUS_VERIFIED:
                 return "Verified and available for claims.";
             case STATUS_MATCHED:

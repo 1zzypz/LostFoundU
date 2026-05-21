@@ -1,5 +1,5 @@
 package lostfound;
-//test githubb
+
 import lostfound.model.Category;
 import lostfound.model.ClaimRequest;
 import lostfound.model.Item;
@@ -53,7 +53,7 @@ class CampusLostFoundSystem {
     private final int[] counts = new int[6];
 
     public CampusLostFoundSystem() {
-        seedData();
+        seedData(); //call demo data
     }
 
     public void run() {
@@ -90,18 +90,18 @@ class CampusLostFoundSystem {
         String email = readLine("Email: ").trim().toLowerCase();
         String password = readLine("Password: ");
 
-        User user = findUserByEmail(email);
+        User user = findUserByEmail(email); //UPCASTING, run method findUserByEmail in obj user
         if (user == null || !user.verifyPassword(password)) {
             System.out.println("Login failed. Check email and password.");
             return;
         }
 
-        session.login(user);
+        session.login(user); //start login for this session 
         System.out.println("Welcome, " + user.getName() + " (" + user.getRole() + ").");
         if (user instanceof Staff) {
-            adminMenu((Staff) user);
+            staffMenu((Staff) user); //DOWNCASTING, display different menus for user
         } else {
-            userMenu((RegisteredUser) user);
+            userMenu((RegisteredUser) user); //DOWNCASTING
         }
     }
 
@@ -112,7 +112,7 @@ class CampusLostFoundSystem {
         }
 
         System.out.println("\n-- Register User --");
-        String name = readRequired("Name: ");
+        String name = readRequired("Name: "); //read required() - method; when field is null, output error message 
         String email = readRequired("Email: ").trim().toLowerCase();
         if (!email.contains("@")) {
             System.out.println("Invalid email.");
@@ -131,13 +131,13 @@ class CampusLostFoundSystem {
         }
         String address = readLine("Address: ");
 
-        users[counts[USER_COUNT]++] = new RegisteredUser(name, email, phone, password, address);
+        users[counts[USER_COUNT]++] = new RegisteredUser(name, email, phone, password, address); //create new registeredUser obj
         System.out.println("Registration successful. You can now log in.");
     }
 
     private void userMenu(RegisteredUser user) {
-        boolean active = true;
-        while (active && session.isLoggedIn()) {
+        boolean active = true; 
+        while (active && session.isLoggedIn()) { // while both condition are true, keep loop
             System.out.println("\n-- User Menu --");
             System.out.println("1. Report lost item");
             System.out.println("2. Submit found item");
@@ -151,7 +151,7 @@ class CampusLostFoundSystem {
 
             switch (choice) {
                 case 1:
-                    reportLostItem(user);
+                    reportLostItem(user); //call method
                     break;
                 case 2:
                     submitFoundItem(user);
@@ -172,7 +172,7 @@ class CampusLostFoundSystem {
                     viewNotifications(user.getUserID());
                     break;
                 case 0:
-                    session.logout();
+                    session.logout(); //logout for this session
                     active = false;
                     break;
                 default:
@@ -181,10 +181,10 @@ class CampusLostFoundSystem {
         }
     }
 
-    private void adminMenu(Staff staff) {
+    private void staffMenu(Staff staff) {
         boolean active = true;
         while (active && session.isLoggedIn()) {
-            System.out.println("\n-- Admin Menu --");
+            System.out.println("\n-- Staff Menu --");
             System.out.println("1. View found items");
             System.out.println("2. View lost reports");
             System.out.println("3. Verify found item");
@@ -237,7 +237,7 @@ class CampusLostFoundSystem {
         String location = readRequired("Location lost: ");
         LocalDate date = readDate("Date lost (yyyy-MM-dd): ");
 
-        ItemLost item = user.reportLostItem(name, description, category, color, location, date);
+        ItemLost item = user.reportLostItem(name, description, category, color, location, date); //store report made by user in item
         lostItems[counts[LOST_COUNT]++] = item;
         System.out.println("Lost report submitted. ID: " + item.getItemID());
     }
@@ -419,10 +419,10 @@ class CampusLostFoundSystem {
 
         int index = 0;
         for (int i = 0; i < counts[LOST_COUNT]; i++) {
-            allItems[index++] = lostItems[i];
+            allItems[index++] = lostItems[i]; //UPCASTING 
         }
         for (int i = 0; i < counts[FOUND_COUNT]; i++) {
-            allItems[index++] = foundItems[i];
+            allItems[index++] = foundItems[i]; //UPCASTING 
         }
         for (int i = 0; i < counts[CLAIM_COUNT]; i++) {
             allClaims[i] = claims[i];
@@ -544,7 +544,7 @@ class CampusLostFoundSystem {
                 "user123", "DHUAM");
         staffMembers[counts[STAFF_COUNT]++] = new Staff(
                 "JHEPA", "jhepa@adab.umpsa.edu.my", "0123456789",
-                "admin123", "Student Affairs");
+                "staff123", "Student Affairs");
 
         RegisteredUser demo = users[0];
         lostItems[counts[LOST_COUNT]++] = demo.reportLostItem(
@@ -564,7 +564,7 @@ class CampusLostFoundSystem {
         System.out.println(" UMPSA CAMPUS LOST & FOUND SYSTEM");
         System.out.println("======================================");
         System.out.println("Demo user : student@adab.umpsa.edu.my / user123");
-        System.out.println("Demo admin: jhepa@adab.umpsa.edu.my / admin123");
+        System.out.println("Demo staff: jhepa@adab.umpsa.edu.my / staff123");
     }
 
     private void printMainMenu() {
