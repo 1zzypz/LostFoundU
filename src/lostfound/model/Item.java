@@ -31,6 +31,26 @@ public abstract class Item {
         this.status = status;
         this.submittedDate = LocalDate.now();
     }
+    
+    public String validateStatus(String status){
+        if(status == null || status.trim().isEmpty()){
+            return STATUS_PENDING;
+        }
+        
+        String upperStatus = status.toUpperCase();
+        switch(upperStatus){
+            case STATUS_PENDING:
+            case STATUS_SUBMITTED:
+            case STATUS_VERIFIED:
+            case STATUS_MATCHED:
+            case STATUS_CLAIMED:
+            case STATUS_CANCELLED:
+            case STATUS_ARCHIVED:
+                return upperStatus;
+            default: 
+                return STATUS_PENDING;
+        }
+    }
 
     public String getItemID() {
         return itemID;
@@ -83,7 +103,7 @@ public abstract class Item {
     }
 
     public void setStatus(String status) {
-        this.status = status;
+        this.status = validateStatus(status);
     }
 
     public abstract String trackStatus();

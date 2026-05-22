@@ -1,21 +1,28 @@
+//package declaration
 package lostfound.model;
 
-import java.time.LocalDate;
-import java.util.List;
-import java.util.UUID;
 
+//import statements. 
+import java.time.LocalDate; //get the current date while running the system.
+import java.util.List; //stores a collection of items or claims
+import java.util.UUID; //generate unique UUID
+
+//inheritance staff class is a child class of user class. staff inherit user information (name, email, phone , password)
+//abstraction. hiding implementation details and only showing important actions. (view reportable.java)
 public class Staff extends User implements Reportable {
 
-    private String staffID;
+    //encapsulation. the variables are private. it cannot be accessed directly from outside of staff.java class 
+    private String staffID; 
     private String department;
 
     public Staff(String name, String email, String phone,
             String password, String department) {
-        super(name, email, phone, password);
+        super(name, email, phone, password); //constructor calls parent class constructor
         this.staffID = "ST-" + UUID.randomUUID().toString().substring(0, 6).toUpperCase();
         this.department = department;
     }
 
+    //access is controlled using getters
     public String getStaffID() {
         return staffID;
     }
@@ -57,6 +64,7 @@ public class Staff extends User implements Reportable {
         return false;
     }
 
+    //polymorphism. same method behave differently based on object. polymorphism uses method override.
     @Override
     public void generateReport(List<Item> items, List<ClaimRequest> claims) {
         int found = 0;
@@ -87,6 +95,7 @@ public class Staff extends User implements Reportable {
         System.out.println("===================================");
     }
 
+    
     @Override
     public String getRole() {
         return "Staff";
