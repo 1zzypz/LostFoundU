@@ -10,6 +10,7 @@ import lostfound.model.RegisteredUser;
 import lostfound.model.Staff;
 import lostfound.model.User;
 import lostfound.session.SessionManager;
+import lostfound.gui.Register;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
@@ -21,6 +22,9 @@ public class Main {
     public static void main(String[] args) {
         CampusLostFoundSystem system = new CampusLostFoundSystem();
         system.run();
+        
+        Register register = new Register();
+        register.setVisible(true);
     }
 }
 
