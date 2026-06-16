@@ -4,6 +4,9 @@
  */
 package lostfound.gui;
 
+import lostfound.da.ItemDA;
+import lostfound.session.SessionManager;
+
 /**
  *
  * @author danis
@@ -11,12 +14,30 @@ package lostfound.gui;
 public class Dashboard extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Dashboard.class.getName());
+    private javax.swing.JButton refreshActivityBtn;
 
     /**
      * Creates new form Dashboard
      */
     public Dashboard() {
         initComponents();
+        addActivityRefreshButton();
+        loadActivityFeed();
+    }
+
+    private void loadActivityFeed() {
+        ItemDA itemDA = new ItemDA();
+        activityfeedTable.setModel(itemDA.getAllItemsTableModel());
+    }
+
+    private void addActivityRefreshButton() {
+        refreshActivityBtn = new javax.swing.JButton("Refresh");
+        refreshActivityBtn.setBackground(new java.awt.Color(244, 85, 0));
+        refreshActivityBtn.setFont(new java.awt.Font("Arial", 0, 14));
+        refreshActivityBtn.setForeground(new java.awt.Color(235, 233, 228));
+        refreshActivityBtn.addActionListener(evt -> loadActivityFeed());
+        jPanel1.add(refreshActivityBtn);
+        refreshActivityBtn.setBounds(650, 220, 110, 30);
     }
 
     /**
@@ -43,6 +64,7 @@ public class Dashboard extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         activityfeedTable = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -151,6 +173,11 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(240, 220, 130, 22);
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/logo.png"))); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(350, 0, 300, 100);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -178,16 +205,16 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void browseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseBtnActionPerformed
         // TODO add your handling code here:
-//        Browse browse = new Browse();
-//        browse.setVisible(true);
-//        this.dispose();
+        BrowseItems browse = new BrowseItems();
+        browse.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_browseBtnActionPerformed
 
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
         // TODO add your handling code here:
-//        Search search = new Search();
-//        search.setVisible(true);
-//        this.dispose();
+        SearchItems search = new SearchItems();
+        search.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_searchBtnActionPerformed
 
     private void userserviceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userserviceBtnActionPerformed
@@ -199,21 +226,28 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void reportlostitemBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportlostitemBtnActionPerformed
         // TODO add your handling code here:
+        ReportLostItem lostItem = new ReportLostItem();
+        lostItem.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_reportlostitemBtnActionPerformed
 
     private void reportfounditemBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportfounditemBtnActionPerformed
         // TODO add your handling code here:
+        ReportFoundItem foundItem = new ReportFoundItem();
+        foundItem.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_reportfounditemBtnActionPerformed
 
     private void browsecatalogBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browsecatalogBtnActionPerformed
         // TODO add your handling code here:
-//        Browse browse = new Browse();
-//        browse.setVisible(true);
-//        this.dispose();
+        BrowseItems browse = new BrowseItems();
+        browse.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_browsecatalogBtnActionPerformed
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
         // TODO add your handling code here:
+        SessionManager.getInstance().logout();
         Login login = new Login();
         login.setVisible(true);
         this.dispose();
@@ -249,6 +283,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton browseBtn;
     private javax.swing.JButton browsecatalogBtn;
     private javax.swing.JButton homeBtn;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;

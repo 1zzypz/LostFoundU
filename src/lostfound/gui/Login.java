@@ -7,6 +7,7 @@ package lostfound.gui;
 import javax.swing.JOptionPane;
 import lostfound.db.DBConnection;
 import lostfound.da.UserDA;
+import lostfound.session.SessionManager;
 /**
  *
  * @author danis
@@ -46,6 +47,7 @@ public class Login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         loginBtn = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -121,6 +123,12 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(450, 400, 190, 16);
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/logo.png"))); // NOI18N
+        jLabel1.setPreferredSize(new java.awt.Dimension(300, 100));
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(360, 20, 360, 140);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -158,7 +166,13 @@ public class Login extends javax.swing.JFrame {
 
         switch (loginResult){
             case 1:
-            JOptionPane.showMessageDialog(this, "Login Succesful!\nWelcome Back.", "Success", JOptionPane.INFORMATION_MESSAGE);
+            String[] sessionUser = userDA.getUserSessionByEmail(email);
+            if (sessionUser == null) {
+                JOptionPane.showMessageDialog(this, "Login successful, but user session could not be loaded.", "System Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            SessionManager.getInstance().loginDatabaseUser(sessionUser[0], sessionUser[1], sessionUser[2]);
+            JOptionPane.showMessageDialog(this, "Login Succesful!\nWelcome Back, " + sessionUser[1] + ".", "Success", JOptionPane.INFORMATION_MESSAGE);
 
             Dashboard dashboard = new Dashboard();
             dashboard.setVisible(true);
@@ -229,6 +243,7 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField emailTextField;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

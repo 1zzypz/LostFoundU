@@ -12,6 +12,7 @@ import lostfound.model.Item;
 import lostfound.model.ItemFound;
 import lostfound.da.ItemDA;
 import lostfound.model.ItemFactory;
+import lostfound.session.SessionManager;
 /**
  *
  * @author danis
@@ -235,10 +236,16 @@ public class ReportFoundItem extends javax.swing.JFrame {
 
     private void browseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseBtnActionPerformed
         // TODO add your handling code here:
+        BrowseItems browse = new BrowseItems();
+        browse.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_browseBtnActionPerformed
 
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
         // TODO add your handling code here:
+        SearchItems search = new SearchItems();
+        search.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_searchBtnActionPerformed
 
     private void userserviceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userserviceBtnActionPerformed
@@ -250,6 +257,7 @@ public class ReportFoundItem extends javax.swing.JFrame {
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
         // TODO add your handling code here:
+        SessionManager.getInstance().logout();
         Login login = new Login();
         login.setVisible(true);
         this.dispose();
@@ -273,6 +281,12 @@ public class ReportFoundItem extends javax.swing.JFrame {
         
         String selectedCategoryStr = (String) categoryDropDown.getSelectedItem();
         Category selectedCategory = Category.OTHERS;
+        for(Category cat : Category.values()){
+            if(cat.name().equals(selectedCategoryStr)){
+                selectedCategory = cat;
+                break;
+            }
+        }
         
         if(name.isEmpty() || locationFound.isEmpty() || dateFoundStr.isEmpty()){
             JOptionPane.showMessageDialog(this, "Item Name, Location Found, and Date Found cannot be empty.", "Validation Error", JOptionPane.WARNING_MESSAGE);
@@ -281,7 +295,14 @@ public class ReportFoundItem extends javax.swing.JFrame {
         
         try {
             LocalDate dateFound = LocalDate.parse(dateFoundStr);
-            String reporterID = "STU-23456";
+            String reporterID = SessionManager.getInstance().getAccountID();
+            if (reporterID == null) {
+                JOptionPane.showMessageDialog(this, "Please log in before reporting an item.", "Session Error", JOptionPane.ERROR_MESSAGE);
+                Login login = new Login();
+                login.setVisible(true);
+                this.dispose();
+                return;
+            }
             
             Item foundItem = ItemFactory.createItem("FOUND", name, description, selectedCategory, color, locationFound, dateFound, storeAt, reporterID);
             
@@ -291,13 +312,9 @@ public class ReportFoundItem extends javax.swing.JFrame {
             if(success){
                 JOptionPane.showMessageDialog(this, "Found Item report submitted successfully for verification!", "Success", JOptionPane.INFORMATION_MESSAGE);
                 
-                itemnameTextField.setText("");
-                descriptionTextField.setText("");
-                colorTextField.setText("");
-                locationfoundTextField.setText("");
-                datefoundTextField.setText("");
-                storeatTextField.setText("");
-                categoryDropDown.setSelectedIndex(0);
+                Dashboard dashboard = new Dashboard();
+                dashboard.setVisible(true);
+                this.dispose();
             } else {
                 JOptionPane.showMessageDialog(this, "Database execution error", "Error", JOptionPane.ERROR_MESSAGE);
             }

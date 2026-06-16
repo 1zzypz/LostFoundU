@@ -48,6 +48,7 @@ public class ForgotPassword extends javax.swing.JFrame {
         confirmpassLabel = new javax.swing.JLabel();
         changepassBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -112,6 +113,11 @@ public class ForgotPassword extends javax.swing.JFrame {
         });
         jPanel1.add(jLabel2);
         jLabel2.setBounds(500, 430, 80, 16);
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/logo.png"))); // NOI18N
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(360, 20, 360, 140);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -214,6 +220,7 @@ public class ForgotPassword extends javax.swing.JFrame {
     private javax.swing.JTextField emailTextField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel newpassLabel;

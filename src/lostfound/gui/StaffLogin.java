@@ -7,6 +7,7 @@ package lostfound.gui;
 import javax.swing.JOptionPane;
 import lostfound.db.DBConnection;
 import lostfound.da.StaffDA;
+import lostfound.session.SessionManager;
 /**
  *
  * @author danis
@@ -44,6 +45,7 @@ public class StaffLogin extends javax.swing.JFrame {
         passwordTextField = new javax.swing.JPasswordField();
         backtologinLink = new javax.swing.JLabel();
         loginBtn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,9 +67,9 @@ public class StaffLogin extends javax.swing.JFrame {
         jPanel2.setBounds(0, 0, 270, 550);
 
         staffidLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        staffidLabel.setText("Staff ID:");
+        staffidLabel.setText("Staff Email:");
         jPanel1.add(staffidLabel);
-        staffidLabel.setBounds(330, 200, 70, 17);
+        staffidLabel.setBounds(330, 200, 100, 17);
 
         staffidTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(staffidTextField);
@@ -99,6 +101,11 @@ public class StaffLogin extends javax.swing.JFrame {
         jPanel1.add(loginBtn);
         loginBtn.setBounds(330, 360, 410, 30);
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/logo.png"))); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(360, 20, 360, 140);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -118,24 +125,32 @@ public class StaffLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
-        String id = staffidTextField.getText().trim();
+        String email = staffidTextField.getText().trim();
         String password = new String(passwordTextField.getPassword()).trim();
         
-        if(id.isEmpty() || password.isEmpty()){
+        if(email.isEmpty() || password.isEmpty()){
             JOptionPane.showMessageDialog(this, "Fields cannot be empty!", "Error", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
-        int result = staffDA.staffLogin(id, password);
+        int result = staffDA.staffLogin(email, password);
         
         if(result == 1){
+            String[] sessionStaff = staffDA.getStaffSessionByEmail(email);
+            if (sessionStaff == null) {
+                JOptionPane.showMessageDialog(this, "Login successful, but staff session could not be loaded.", "System Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            SessionManager.getInstance().loginDatabaseStaff(sessionStaff[0], sessionStaff[1], sessionStaff[2]);
             JOptionPane.showMessageDialog(this, "Login Successful!");
             
-//            staffDashboard staffDash = new staffDashboard();
-//            staffDash.setVisible(true);
-//            this.dispose();
+            StaffDashboard staffDashboard = new StaffDashboard();
+            staffDashboard.setVisible(true);
+            this.dispose();
         } else if (result == -1){
             JOptionPane.showMessageDialog(this, "Incorrect password.", "Login Failed", JOptionPane.ERROR_MESSAGE);
+        } else if (result == -2){
+            JOptionPane.showMessageDialog(this, "Database connection error. Please check MySQL/XAMPP.", "System Error", JOptionPane.ERROR_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(this, "Staff account does not exist.", "Login Failed", JOptionPane.ERROR_MESSAGE);
         }
@@ -175,6 +190,7 @@ public class StaffLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backtologinLink;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton loginBtn;

@@ -1,5 +1,6 @@
 package lostfound;
 
+//import statements. untuk guna other classes.
 import lostfound.model.Category;
 import lostfound.model.ClaimRequest;
 import lostfound.model.Item;
@@ -10,24 +11,33 @@ import lostfound.model.RegisteredUser;
 import lostfound.model.Staff;
 import lostfound.model.User;
 import lostfound.session.SessionManager;
-import lostfound.gui.Register;
+import lostfound.gui.Login;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.Arrays;
 import java.util.Scanner;
 
+
+//phase 2. untuk run console based
+//public class Main {
+//
+//    public static void main(String[] args) {
+//        CampusLostFoundSystem system = new CampusLostFoundSystem();
+//        system.run();
+//    }
+//}
+
+
+////phase 3 untuk run gui based only
 public class Main {
 
     public static void main(String[] args) {
-        CampusLostFoundSystem system = new CampusLostFoundSystem();
-        system.run();
-        
-        Register register = new Register();
-        register.setVisible(true);
+        java.awt.EventQueue.invokeLater(() -> new Login().setVisible(true));
     }
 }
 
+//define constants untuk storage size
 class CampusLostFoundSystem {
 
     private static final int MAX_USERS = 30;
@@ -47,8 +57,8 @@ class CampusLostFoundSystem {
     private final Scanner scanner = new Scanner(System.in);
     private final SessionManager session = SessionManager.getInstance();
 
-    private final RegisteredUser[] users = new RegisteredUser[MAX_USERS];
-    private final Staff[] staffMembers = new Staff[MAX_STAFF];
+    private final RegisteredUser[] users = new RegisteredUser[MAX_USERS]; //array of objects
+    private final Staff[] staffMembers = new Staff[MAX_STAFF]; 
     private final ItemLost[] lostItems = new ItemLost[MAX_LOST];
     private final ItemFound[] foundItems = new ItemFound[MAX_FOUND];
     private final ClaimRequest[] claims = new ClaimRequest[MAX_CLAIMS];
@@ -56,10 +66,13 @@ class CampusLostFoundSystem {
 
     private final int[] counts = new int[6];
 
+    //constructor untuk call method seed/demo data. 
     public CampusLostFoundSystem() {
-        seedData(); //call demo data
+        seedData();
     }
+    
 
+    //read user input untuk call specific method.
     public void run() {
         boolean running = true;
         printHeader();
@@ -89,6 +102,7 @@ class CampusLostFoundSystem {
         }
     }
 
+    //method login untuk handle login for staff or user
     private void login() {
         System.out.println("\n-- Login --");
         String email = readLine("Email: ").trim().toLowerCase();
@@ -109,6 +123,7 @@ class CampusLostFoundSystem {
         }
     }
 
+    //method register.
     private void registerUser() {
         if (counts[USER_COUNT] >= MAX_USERS) {
             System.out.println("User storage is full.");
@@ -140,7 +155,7 @@ class CampusLostFoundSystem {
     }
 
     private void userMenu(RegisteredUser user) {
-        boolean active = true; 
+        boolean active = true;
         while (active && session.isLoggedIn()) { // while both condition are true, keep loop
             System.out.println("\n-- User Menu --");
             System.out.println("1. Report lost item");
@@ -542,6 +557,7 @@ class CampusLostFoundSystem {
         }
     }
 
+    //seed/demo data for output sample
     private void seedData() {
         users[counts[USER_COUNT]++] = new RegisteredUser(
                 "AARON AZIZ", "student@adab.umpsa.edu.my", "01115771808",
@@ -563,6 +579,7 @@ class CampusLostFoundSystem {
         foundItems[counts[FOUND_COUNT]++] = bottle;
     }
 
+    //menu yang lawa kebaboom
     private void printHeader() {
         System.out.println("======================================");
         System.out.println(" UMPSA CAMPUS LOST & FOUND SYSTEM");

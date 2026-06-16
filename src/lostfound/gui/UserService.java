@@ -4,6 +4,8 @@
  */
 package lostfound.gui;
 
+import lostfound.session.SessionManager;
+
 /**
  *
  * @author danis
@@ -41,7 +43,7 @@ public class UserService extends javax.swing.JFrame {
         submitfounditemBtn = new javax.swing.JButton();
         submitclaimBtn = new javax.swing.JButton();
         editlostreportBtn = new javax.swing.JButton();
-        deletelostreportBtn = new javax.swing.JButton();
+        viewclaimsBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -121,20 +123,23 @@ public class UserService extends javax.swing.JFrame {
         submitclaimBtn.setBackground(new java.awt.Color(244, 85, 0));
         submitclaimBtn.setForeground(new java.awt.Color(235, 233, 228));
         submitclaimBtn.setText("Submit Claim");
+        submitclaimBtn.addActionListener(this::submitclaimBtnActionPerformed);
         jPanel1.add(submitclaimBtn);
         submitclaimBtn.setBounds(240, 250, 250, 90);
 
         editlostreportBtn.setBackground(new java.awt.Color(244, 85, 0));
         editlostreportBtn.setForeground(new java.awt.Color(235, 233, 228));
-        editlostreportBtn.setText("Edit Lost Report");
+        editlostreportBtn.setText("Manage Report");
+        editlostreportBtn.addActionListener(this::editlostreportBtnActionPerformed);
         jPanel1.add(editlostreportBtn);
         editlostreportBtn.setBounds(510, 250, 250, 90);
 
-        deletelostreportBtn.setBackground(new java.awt.Color(244, 85, 0));
-        deletelostreportBtn.setForeground(new java.awt.Color(235, 233, 228));
-        deletelostreportBtn.setText("Delete Lost Report");
-        jPanel1.add(deletelostreportBtn);
-        deletelostreportBtn.setBounds(370, 360, 250, 90);
+        viewclaimsBtn.setBackground(new java.awt.Color(244, 85, 0));
+        viewclaimsBtn.setForeground(new java.awt.Color(235, 233, 228));
+        viewclaimsBtn.setText("View My Claims");
+        viewclaimsBtn.addActionListener(this::viewclaimsBtnActionPerformed);
+        jPanel1.add(viewclaimsBtn);
+        viewclaimsBtn.setBounds(370, 370, 250, 90);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -163,16 +168,16 @@ public class UserService extends javax.swing.JFrame {
 
     private void browseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseBtnActionPerformed
         // TODO add your handling code here:
-//        Browse browse = new Browse();
-//        browse.setVisible(true);
-//        this.dispose();
+        BrowseItems browse = new BrowseItems();
+        browse.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_browseBtnActionPerformed
 
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
         // TODO add your handling code here:
-//        Search search = new Search();
-//        search.setVisible(true);
-//        this.dispose();
+        SearchItems search = new SearchItems();
+        search.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_searchBtnActionPerformed
 
     private void userserviceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userserviceBtnActionPerformed
@@ -184,6 +189,7 @@ public class UserService extends javax.swing.JFrame {
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
         // TODO add your handling code here:
+        SessionManager.getInstance().logout();
         Login login = new Login();
         login.setVisible(true);
         this.dispose();
@@ -202,6 +208,24 @@ public class UserService extends javax.swing.JFrame {
         foundItem.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_submitfounditemBtnActionPerformed
+
+    private void submitclaimBtnActionPerformed(java.awt.event.ActionEvent evt) {
+        SubmitClaim submitClaim = new SubmitClaim();
+        submitClaim.setVisible(true);
+        this.dispose();
+    }
+
+    private void viewclaimsBtnActionPerformed(java.awt.event.ActionEvent evt) {
+        MyClaims myClaims = new MyClaims();
+        myClaims.setVisible(true);
+        this.dispose();
+    }
+
+    private void editlostreportBtnActionPerformed(java.awt.event.ActionEvent evt) {
+        ManageReports manageReports = new ManageReports();
+        manageReports.setVisible(true);
+        this.dispose();
+    }
 
     /**
      * @param args the command line arguments
@@ -230,7 +254,6 @@ public class UserService extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton browseBtn;
-    private javax.swing.JButton deletelostreportBtn;
     private javax.swing.JButton editlostreportBtn;
     private javax.swing.JButton homeBtn;
     private javax.swing.JLabel jLabel3;
@@ -243,5 +266,6 @@ public class UserService extends javax.swing.JFrame {
     private javax.swing.JButton submitclaimBtn;
     private javax.swing.JButton submitfounditemBtn;
     private javax.swing.JButton userserviceBtn;
+    private javax.swing.JButton viewclaimsBtn;
     // End of variables declaration//GEN-END:variables
 }

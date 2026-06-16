@@ -6,7 +6,9 @@ package lostfound.da;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
 import lostfound.db.DBConnection;
 import lostfound.model.Item;
 import lostfound.model.ItemFound;
@@ -16,6 +18,172 @@ import lostfound.model.ItemLost;
  * @author danis
  */
 public class ItemDA {
+    
+    public DefaultTableModel getAllItemsTableModel() {
+        String[] columns = {"Item ID", "Type", "Name", "Category", "Color", "Location", "Date", "Status"};
+        DefaultTableModel model = new DefaultTableModel(columns, 0) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        
+        String sql = "SELECT item_id, item_type, item_name, category, color, status, "
+                   + "COALESCE(location_lost, location_found) AS item_location, "
+                   + "COALESCE(date_lost, date_found) AS item_date "
+                   + "FROM items ORDER BY submitted_date DESC, item_id DESC";
+        
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+            
+            while (rs.next()) {
+                model.addRow(new Object[] {
+                    rs.getString("item_id"),
+                    rs.getString("item_type"),
+                    rs.getString("item_name"),
+                    rs.getString("category"),
+                    rs.getString("color"),
+                    rs.getString("item_location"),
+                    rs.getDate("item_date"),
+                    rs.getString("status")
+                });
+            }
+        } catch (SQLException e) {
+            System.err.println("Error loading item activity feed: " + e.getMessage());
+            e.printStackTrace();
+        }
+        
+        return model;
+    }
+    
+    public DefaultTableModel searchItemsTableModel(String keyword) {
+        String[] columns = {"Item ID", "Type", "Name", "Category", "Color", "Location", "Date", "Status"};
+        DefaultTableModel model = new DefaultTableModel(columns, 0) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        
+        String sql = "SELECT item_id, item_type, item_name, category, color, status, "
+                   + "COALESCE(location_lost, location_found) AS item_location, "
+                   + "COALESCE(date_lost, date_found) AS item_date "
+                   + "FROM items "
+                   + "WHERE item_id LIKE ? OR item_type LIKE ? OR item_name LIKE ? "
+                   + "OR description LIKE ? OR category LIKE ? OR color LIKE ? "
+                   + "OR status LIKE ? OR location_lost LIKE ? OR location_found LIKE ? "
+                   + "ORDER BY submitted_date DESC, item_id DESC";
+        
+        String searchKeyword = "%" + keyword + "%";
+        
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            
+            for (int i = 1; i <= 9; i++) {
+                pstmt.setString(i, searchKeyword);
+            }
+            
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    model.addRow(new Object[] {
+                        rs.getString("item_id"),
+                        rs.getString("item_type"),
+                        rs.getString("item_name"),
+                        rs.getString("category"),
+                        rs.getString("color"),
+                        rs.getString("item_location"),
+                        rs.getDate("item_date"),
+                        rs.getString("status")
+                    });
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Error searching item records: " + e.getMessage());
+            e.printStackTrace();
+        }
+        
+        return model;
+    }
+    
+    public DefaultTableModel getFoundItemsTableModel() {
+        String[] columns = {"Item ID", "Name", "Category", "Color", "Location", "Date", "Status"};
+        DefaultTableModel model = new DefaultTableModel(columns, 0) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        
+        String sql = "SELECT item_id, item_name, category, color, location_found, date_found, status "
+                   + "FROM items WHERE item_type = 'FOUND' "
+                   + "ORDER BY submitted_date DESC, item_id DESC";
+        
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+            
+            while (rs.next()) {
+                model.addRow(new Object[] {
+                    rs.getString("item_id"),
+                    rs.getString("item_name"),
+                    rs.getString("category"),
+                    rs.getString("color"),
+                    rs.getString("location_found"),
+                    rs.getDate("date_found"),
+                    rs.getString("status")
+                });
+            }
+        } catch (SQLException e) {
+            System.err.println("Error loading found items: " + e.getMessage());
+            e.printStackTrace();
+        }
+        
+        return model;
+    }
+    
+    public DefaultTableModel getUserItemsManagementTableModel(String userID) {
+        String[] columns = {"Item ID", "Type", "Name", "Description", "Category", "Color", "Location", "Date", "Status"};
+        DefaultTableModel model = new DefaultTableModel(columns, 0) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        
+        String sql = "SELECT item_id, item_type, item_name, description, category, color, status, "
+                   + "COALESCE(location_lost, location_found) AS item_location, "
+                   + "COALESCE(date_lost, date_found) AS item_date "
+                   + "FROM items WHERE reporter_id = ? "
+                   + "ORDER BY submitted_date DESC, item_id DESC";
+        
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            
+            pstmt.setString(1, userID);
+            
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    model.addRow(new Object[] {
+                        rs.getString("item_id"),
+                        rs.getString("item_type"),
+                        rs.getString("item_name"),
+                        rs.getString("description"),
+                        rs.getString("category"),
+                        rs.getString("color"),
+                        rs.getString("item_location"),
+                        rs.getDate("item_date"),
+                        rs.getString("status")
+                    });
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Error loading user item reports: " + e.getMessage());
+            e.printStackTrace();
+        }
+        
+        return model;
+    }
     
     public boolean insertLostItem(ItemLost lostItem){
         String sql = "INSERT INTO items (item_id, item_type, item_name, description, category, color, status, "
@@ -80,6 +248,68 @@ public class ItemDA {
             return rowsAffected > 0;
             
         } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    public boolean verifyFoundItem(String itemID) {
+        String sql = "UPDATE items SET status = 'VERIFIED' WHERE item_id = ? AND item_type = 'FOUND' AND status = 'SUBMITTED'";
+        
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            
+            pstmt.setString(1, itemID);
+            
+            int rowsAffected = pstmt.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            System.err.println("Error verifying found item: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    public boolean updateUserItemReport(String itemID, String userID, String itemName,
+            String description, String color, String location) {
+        String sql = "UPDATE items SET item_name = ?, description = ?, color = ?, "
+                   + "location_lost = CASE WHEN item_type = 'LOST' THEN ? ELSE location_lost END, "
+                   + "location_found = CASE WHEN item_type = 'FOUND' THEN ? ELSE location_found END "
+                   + "WHERE item_id = ? AND reporter_id = ?";
+        
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            
+            pstmt.setString(1, itemName);
+            pstmt.setString(2, description);
+            pstmt.setString(3, color);
+            pstmt.setString(4, location);
+            pstmt.setString(5, location);
+            pstmt.setString(6, itemID);
+            pstmt.setString(7, userID);
+            
+            int rowsAffected = pstmt.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            System.err.println("Error updating user item report: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    public boolean deleteUserItemReport(String itemID, String userID) {
+        String sql = "DELETE FROM items WHERE item_id = ? AND reporter_id = ?";
+        
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            
+            pstmt.setString(1, itemID);
+            pstmt.setString(2, userID);
+            
+            int rowsAffected = pstmt.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            System.err.println("Error deleting user item report: " + e.getMessage());
             e.printStackTrace();
             return false;
         }

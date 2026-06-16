@@ -12,6 +12,7 @@ import lostfound.model.Item;
 import lostfound.model.ItemLost;
 import lostfound.da.ItemDA;
 import lostfound.model.ItemFactory;
+import lostfound.session.SessionManager;
 
 /**
  *
@@ -226,10 +227,16 @@ public class ReportLostItem extends javax.swing.JFrame {
 
     private void browseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseBtnActionPerformed
         // TODO add your handling code here:
+        BrowseItems browse = new BrowseItems();
+        browse.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_browseBtnActionPerformed
 
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
         // TODO add your handling code here:
+        SearchItems search = new SearchItems();
+        search.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_searchBtnActionPerformed
 
     private void userserviceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userserviceBtnActionPerformed
@@ -241,6 +248,7 @@ public class ReportLostItem extends javax.swing.JFrame {
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
         // TODO add your handling code here:
+        SessionManager.getInstance().logout();
         Login login = new Login();
         login.setVisible(true);
         this.dispose();
@@ -278,7 +286,14 @@ public class ReportLostItem extends javax.swing.JFrame {
         
         try {
             LocalDate dateLost2 = LocalDate.parse(dateLost);
-            String activeReporterID = "STU-12345";
+            String activeReporterID = SessionManager.getInstance().getAccountID();
+            if (activeReporterID == null) {
+                JOptionPane.showMessageDialog(this, "Please log in before reporting an item.", "Session Error", JOptionPane.ERROR_MESSAGE);
+                Login login = new Login();
+                login.setVisible(true);
+                this.dispose();
+                return;
+            }
             Item lostItem = ItemFactory.createItem("LOST", name, description, selectedCategory, color, locationLost, dateLost2, null, activeReporterID);
             
             ItemDA dbAccess = new ItemDA();
@@ -287,12 +302,9 @@ public class ReportLostItem extends javax.swing.JFrame {
             if(success){
                 JOptionPane.showMessageDialog(this, "Report sent successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
                 
-                itemnameTextField.setText("");
-                descriptionTextField.setText("");
-                colorTextField.setText("");
-                lastseenTextField.setText("");
-                datelostTextField.setText("");
-                categoryDropDown.setSelectedIndex(0);
+                Dashboard dashboard = new Dashboard();
+                dashboard.setVisible(true);
+                this.dispose();
             } else {
                 JOptionPane.showMessageDialog(this, "Database entry failed.", "Error", JOptionPane.ERROR_MESSAGE);
             }

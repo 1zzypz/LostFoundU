@@ -49,6 +49,7 @@ public class Register extends javax.swing.JFrame {
         submitBtn = new javax.swing.JButton();
         loginClickHere = new javax.swing.JLabel();
         passwordTextField = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -123,6 +124,11 @@ public class Register extends javax.swing.JFrame {
         passwordTextField.addActionListener(this::passwordTextFieldActionPerformed);
         jPanel1.add(passwordTextField);
         passwordTextField.setBounds(330, 350, 420, 23);
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/logo.png"))); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(360, 0, 360, 110);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -238,6 +244,7 @@ public class Register extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel emailLabel;
     private javax.swing.JTextField emailTextField;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel loginClickHere;
