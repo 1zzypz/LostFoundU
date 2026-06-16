@@ -44,7 +44,7 @@ public class BrowseItems extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(235, 233, 228));
+        jPanel1.setBackground(new java.awt.Color(242, 224, 139));
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 550));
         jPanel1.setLayout(null);
 
@@ -98,10 +98,10 @@ public class BrowseItems extends javax.swing.JFrame {
         jPanel1.add(jPanel2);
         jPanel2.setBounds(0, 0, 200, 550);
 
-        titleLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        titleLabel.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
         titleLabel.setText("Browse Items");
         jPanel1.add(titleLabel);
-        titleLabel.setBounds(230, 50, 150, 22);
+        titleLabel.setBounds(230, 50, 150, 21);
 
         refreshBtn.setBackground(new java.awt.Color(244, 85, 0));
         refreshBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -111,6 +111,7 @@ public class BrowseItems extends javax.swing.JFrame {
         jPanel1.add(refreshBtn);
         refreshBtn.setBounds(650, 50, 110, 30);
 
+        itemsTable.setBackground(new java.awt.Color(243, 239, 228));
         itemsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
