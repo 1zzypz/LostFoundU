@@ -3,11 +3,25 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Izzati/OneDrive/Desktop/LostFoundU/src/lostfound/gui/BrowseItems.java</file>
-            <file>file:/C:/Users/Izzati/OneDrive/Desktop/LostFoundU/src/lostfound/db/DBConnection.java</file>
-            <file>file:/C:/Users/Izzati/OneDrive/Desktop/LostFoundU/src/lostfound/gui/Register.java</file>
-            <file>file:/C:/Users/Izzati/OneDrive/Desktop/LostFoundU/src/lostfound/gui/Dashboard.java</file>
-            <file>file:/C:/Users/Izzati/OneDrive/Desktop/LostFoundU/src/lostfound/gui/Login.java</file>
+            <file>file:/C:/Users/aidie/OneDrive/Documents/GitHub/LostFoundU/src/lostfound/Main.java</file>
+            <file>file:/C:/Users/aidie/OneDrive/Documents/GitHub/LostFoundU/src/lostfound/da/ClaimDA.java</file>
+            <file>file:/C:/Users/aidie/OneDrive/Documents/GitHub/LostFoundU/src/lostfound/gui/ReportFoundItem.java</file>
+            <file>file:/C:/Users/aidie/OneDrive/Documents/GitHub/LostFoundU/src/lostfound/gui/Register.java</file>
+            <file>file:/C:/Users/aidie/OneDrive/Documents/GitHub/LostFoundU/src/lostfound/gui/UserService.java</file>
+            <file>file:/C:/Users/aidie/OneDrive/Documents/GitHub/LostFoundU/src/lostfound/gui/StaffLogin.java</file>
+            <file>file:/C:/Users/aidie/OneDrive/Documents/GitHub/LostFoundU/src/lostfound/gui/MyClaims.java</file>
+            <file>file:/C:/Users/aidie/OneDrive/Documents/GitHub/LostFoundU/src/lostfound/gui/ReportLostItem.java</file>
+            <file>file:/C:/Users/aidie/OneDrive/Documents/GitHub/LostFoundU/src/lostfound/gui/BrowseItems.java</file>
+            <file>file:/C:/Users/aidie/OneDrive/Documents/GitHub/LostFoundU/src/lostfound/gui/ManageReports.java</file>
+            <file>file:/C:/Users/aidie/OneDrive/Documents/GitHub/LostFoundU/src/lostfound/gui/Dashboard.java</file>
+            <file>file:/C:/Users/aidie/OneDrive/Documents/GitHub/LostFoundU/src/lostfound/gui/StaffDashboard.java</file>
+            <file>file:/C:/Users/aidie/OneDrive/Documents/GitHub/LostFoundU/src/lostfound/gui/SearchItems.java</file>
+            <file>file:/C:/Users/aidie/OneDrive/Documents/GitHub/LostFoundU/src/lostfound/gui/Login.java</file>
+            <file>file:/C:/Users/aidie/OneDrive/Documents/GitHub/LostFoundU/src/lostfound/gui/SubmitClaim.java</file>
+            <file>file:/C:/Users/aidie/OneDrive/Documents/GitHub/LostFoundU/src/lostfound/gui/ForgotPassword.java</file>
+            <file>file:/C:/Users/aidie/OneDrive/Documents/GitHub/LostFoundU/src/lostfound/session/SessionManager.java</file>
+            <file>file:/C:/Users/aidie/OneDrive/Documents/GitHub/LostFoundU/src/lostfound/da/UserDA.java</file>
+            <file>file:/C:/Users/aidie/OneDrive/Documents/GitHub/LostFoundU/src/lostfound/da/StaffDA.java</file>
         </group>
     </open-files>
 </project-private>
