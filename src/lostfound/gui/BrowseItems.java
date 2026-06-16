@@ -2,7 +2,10 @@ package lostfound.gui;
 
 import lostfound.da.ItemDA;
 import lostfound.session.SessionManager;
-
+/**
+ *
+ * @author izzati-GUI MASTER!!!
+ */
 public class BrowseItems extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BrowseItems.class.getName());
@@ -30,88 +33,38 @@ public class BrowseItems extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        titleLabel = new javax.swing.JLabel();
+        refreshBtn = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        itemsTable = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         homeBtn = new javax.swing.JButton();
         browseBtn = new javax.swing.JButton();
         searchBtn = new javax.swing.JButton();
         userserviceBtn = new javax.swing.JButton();
         logoutBtn = new javax.swing.JButton();
-        titleLabel = new javax.swing.JLabel();
-        refreshBtn = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        itemsTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(242, 224, 139));
-        jPanel1.setPreferredSize(new java.awt.Dimension(800, 550));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jPanel1.setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(244, 85, 0));
-        jPanel2.setPreferredSize(new java.awt.Dimension(200, 550));
-        jPanel2.setLayout(null);
-
-        jLabel4.setFont(new java.awt.Font("Nirmala Text", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(235, 233, 228));
-        jLabel4.setText("Lost&FoundU");
-        jPanel2.add(jLabel4);
-        jLabel4.setBounds(20, 50, 170, 56);
-
-        homeBtn.setBackground(new java.awt.Color(235, 233, 228));
-        homeBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        homeBtn.setText("Home");
-        homeBtn.addActionListener(this::homeBtnActionPerformed);
-        jPanel2.add(homeBtn);
-        homeBtn.setBounds(10, 170, 180, 30);
-
-        browseBtn.setBackground(new java.awt.Color(235, 233, 228));
-        browseBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        browseBtn.setText("Browse");
-        browseBtn.addActionListener(this::browseBtnActionPerformed);
-        jPanel2.add(browseBtn);
-        browseBtn.setBounds(10, 220, 180, 30);
-
-        searchBtn.setBackground(new java.awt.Color(235, 233, 228));
-        searchBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        searchBtn.setText("Search");
-        searchBtn.setToolTipText("");
-        searchBtn.addActionListener(this::searchBtnActionPerformed);
-        jPanel2.add(searchBtn);
-        searchBtn.setBounds(10, 270, 180, 30);
-
-        userserviceBtn.setBackground(new java.awt.Color(235, 233, 228));
-        userserviceBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        userserviceBtn.setText("User Service");
-        userserviceBtn.setToolTipText("");
-        userserviceBtn.addActionListener(this::userserviceBtnActionPerformed);
-        jPanel2.add(userserviceBtn);
-        userserviceBtn.setBounds(10, 320, 180, 30);
-
-        logoutBtn.setBackground(new java.awt.Color(235, 233, 228));
-        logoutBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        logoutBtn.setText("Logout");
-        logoutBtn.addActionListener(this::logoutBtnActionPerformed);
-        jPanel2.add(logoutBtn);
-        logoutBtn.setBounds(10, 500, 180, 30);
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 200, 550);
-
-        titleLabel.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
+        titleLabel.setFont(new java.awt.Font("Bell MT", 1, 48)); // NOI18N
         titleLabel.setText("Browse Items");
         jPanel1.add(titleLabel);
-        titleLabel.setBounds(230, 50, 150, 21);
+        titleLabel.setBounds(320, 100, 330, 50);
 
-        refreshBtn.setBackground(new java.awt.Color(244, 85, 0));
+        refreshBtn.setBackground(new java.awt.Color(243, 239, 228));
         refreshBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        refreshBtn.setForeground(new java.awt.Color(235, 233, 228));
-        refreshBtn.setText("Refresh");
+        refreshBtn.setText("REFRESH");
         refreshBtn.addActionListener(this::refreshBtnActionPerformed);
         jPanel1.add(refreshBtn);
-        refreshBtn.setBounds(650, 50, 110, 30);
+        refreshBtn.setBounds(1740, 110, 110, 30);
 
         itemsTable.setBackground(new java.awt.Color(243, 239, 228));
+        itemsTable.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         itemsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -123,10 +76,63 @@ public class BrowseItems extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        itemsTable.setRowHeight(25);
         jScrollPane1.setViewportView(itemsTable);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(230, 100, 530, 390);
+        jScrollPane1.setBounds(320, 170, 1530, 800);
+
+        jLabel4.setFont(new java.awt.Font("STHupo", 1, 30)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(231, 85, 49));
+        jLabel4.setText("Lost&FoundU");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(30, 40, 180, 56);
+
+        homeBtn.setBackground(new java.awt.Color(231, 85, 49));
+        homeBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        homeBtn.setForeground(new java.awt.Color(255, 255, 255));
+        homeBtn.setText("HOME");
+        homeBtn.addActionListener(this::homeBtnActionPerformed);
+        jPanel1.add(homeBtn);
+        homeBtn.setBounds(30, 140, 180, 30);
+
+        browseBtn.setBackground(new java.awt.Color(231, 85, 49));
+        browseBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        browseBtn.setForeground(new java.awt.Color(255, 255, 255));
+        browseBtn.setText("BROWSE");
+        browseBtn.addActionListener(this::browseBtnActionPerformed);
+        jPanel1.add(browseBtn);
+        browseBtn.setBounds(30, 220, 180, 30);
+
+        searchBtn.setBackground(new java.awt.Color(231, 85, 49));
+        searchBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        searchBtn.setForeground(new java.awt.Color(255, 255, 255));
+        searchBtn.setText("SEARCH");
+        searchBtn.setToolTipText("");
+        searchBtn.addActionListener(this::searchBtnActionPerformed);
+        jPanel1.add(searchBtn);
+        searchBtn.setBounds(30, 300, 180, 30);
+
+        userserviceBtn.setBackground(new java.awt.Color(231, 85, 49));
+        userserviceBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        userserviceBtn.setForeground(new java.awt.Color(255, 255, 255));
+        userserviceBtn.setText("USER SERVICE");
+        userserviceBtn.setToolTipText("");
+        userserviceBtn.addActionListener(this::userserviceBtnActionPerformed);
+        jPanel1.add(userserviceBtn);
+        userserviceBtn.setBounds(30, 380, 180, 30);
+
+        logoutBtn.setBackground(new java.awt.Color(242, 224, 139));
+        logoutBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        logoutBtn.setText("Logout");
+        logoutBtn.addActionListener(this::logoutBtnActionPerformed);
+        jPanel1.add(logoutBtn);
+        logoutBtn.setBounds(30, 940, 180, 30);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/bluewhitebg.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 0, 240, 1080);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -134,13 +140,13 @@ public class BrowseItems extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 33, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 35, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -204,9 +210,9 @@ public class BrowseItems extends javax.swing.JFrame {
     private javax.swing.JButton browseBtn;
     private javax.swing.JButton homeBtn;
     private javax.swing.JTable itemsTable;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton logoutBtn;
     private javax.swing.JButton refreshBtn;
