@@ -1,3 +1,5 @@
+//abstract class
+
 package lostfound.model;
 
 import java.time.LocalDate;
