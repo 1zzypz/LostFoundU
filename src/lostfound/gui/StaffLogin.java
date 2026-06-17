@@ -6,7 +6,7 @@ package lostfound.gui;
 
 import javax.swing.JOptionPane;
 import lostfound.db.DBConnection;
-import lostfound.da.UserDA;
+import lostfound.da.StaffDA;
 import lostfound.session.SessionManager;
 /**
  *
@@ -16,7 +16,7 @@ public class StaffLogin extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(StaffLogin.class.getName());
     private DBConnection connection;
-    private UserDA userDA;
+    private StaffDA staffDA;
     /**
      * Creates new form Login
      */
@@ -24,7 +24,7 @@ public class StaffLogin extends javax.swing.JFrame {
         initComponents();
         
         connection = new DBConnection();
-        userDA = new UserDA();
+        staffDA = new StaffDA();
     }
 
     /**
@@ -173,20 +173,20 @@ public class StaffLogin extends javax.swing.JFrame {
         }
 
         //query
-        int loginResult = userDA.loginUser(email, password);
+        int loginResult = staffDA.staffLogin(email, password);
 
         switch (loginResult){
             case 1:
-            String[] sessionUser = userDA.getUserSessionByEmail(email);
-            if (sessionUser == null) {
-                JOptionPane.showMessageDialog(this, "Login successful, but user session could not be loaded.", "System Error", JOptionPane.ERROR_MESSAGE);
+            String[] sessionStaff = staffDA.getStaffSessionByEmail(email);
+            if (sessionStaff == null) {
+                JOptionPane.showMessageDialog(this, "Login successful, but staff session could not be loaded.", "System Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            SessionManager.getInstance().loginDatabaseUser(sessionUser[0], sessionUser[1], sessionUser[2]);
-            JOptionPane.showMessageDialog(this, "Login Succesful!\nWelcome Back, " + sessionUser[1] + ".", "Success", JOptionPane.INFORMATION_MESSAGE);
+            SessionManager.getInstance().loginDatabaseStaff(sessionStaff[0], sessionStaff[1], sessionStaff[2]);
+            JOptionPane.showMessageDialog(this, "Login Succesful!\nWelcome Back, " + sessionStaff[1] + ".", "Success", JOptionPane.INFORMATION_MESSAGE);
 
-            Dashboard dashboard = new Dashboard();
-            dashboard.setVisible(true);
+            StaffDashboard staffDashboard = new StaffDashboard();
+            staffDashboard.setVisible(true);
             this.dispose();
             break;
 
@@ -215,15 +215,15 @@ public class StaffLogin extends javax.swing.JFrame {
 
     private void userLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userLoginMouseClicked
         // TODO add your handling code here:
-        StaffLogin staffLogin = new StaffLogin();
-        staffLogin.setVisible(true);
+        Login loginFrame = new Login();
+        loginFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_userLoginMouseClicked
 
     private void registerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerMouseClicked
         // TODO add your handling code here:
-        Register register = new Register();
-        register.setVisible(true);
+        Register registerFrame = new Register();
+        registerFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_registerMouseClicked
 
