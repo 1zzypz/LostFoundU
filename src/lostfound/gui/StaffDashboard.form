@@ -97,7 +97,6 @@
               <Color blue="e4" green="e9" red="eb" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="REFRESH"/>
-            <Property name="actionCommand" type="java.lang.String" value="REFRESH"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="refreshBtnActionPerformed"/>
