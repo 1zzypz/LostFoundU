@@ -29,7 +29,7 @@ public class ReportFoundItem extends javax.swing.JFrame {
         
         categoryDropDown.removeAllItems();
         for(Category cat : Category.values()){
-            categoryDropDown.addItem(cat.name());
+            categoryDropDown.addItem(cat.toString());
         }
         
     }

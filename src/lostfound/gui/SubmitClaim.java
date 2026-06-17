@@ -41,13 +41,11 @@ public class SubmitClaim extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        homeBtn = new javax.swing.JButton();
-        browseBtn = new javax.swing.JButton();
-        searchBtn = new javax.swing.JButton();
-        userserviceBtn = new javax.swing.JButton();
-        logoutBtn = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        homeBtn1 = new javax.swing.JButton();
+        browseBtn1 = new javax.swing.JButton();
+        searchBtn1 = new javax.swing.JButton();
+        userserviceBtn1 = new javax.swing.JButton();
         titleLabel = new javax.swing.JLabel();
         foundItemIDLabel = new javax.swing.JLabel();
         foundItemIDTextField = new javax.swing.JTextField();
@@ -59,81 +57,75 @@ public class SubmitClaim extends javax.swing.JFrame {
         foundItemsTable = new javax.swing.JTable();
         backBtn = new javax.swing.JButton();
         submitBtn = new javax.swing.JButton();
+        logoutBtn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1920, 1080));
 
-        jPanel1.setBackground(new java.awt.Color(235, 233, 228));
-        jPanel1.setPreferredSize(new java.awt.Dimension(800, 550));
+        jPanel1.setBackground(new java.awt.Color(242, 224, 139));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jPanel1.setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(244, 85, 0));
-        jPanel2.setPreferredSize(new java.awt.Dimension(200, 550));
-        jPanel2.setLayout(null);
+        jLabel5.setFont(new java.awt.Font("STHupo", 1, 30)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(231, 85, 49));
+        jLabel5.setText("Lost&FoundU");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(30, 100, 190, 56);
 
-        jLabel4.setFont(new java.awt.Font("Nirmala Text", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(235, 233, 228));
-        jLabel4.setText("Lost&FoundU");
-        jPanel2.add(jLabel4);
-        jLabel4.setBounds(20, 50, 170, 56);
+        homeBtn1.setBackground(new java.awt.Color(231, 85, 49));
+        homeBtn1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        homeBtn1.setForeground(new java.awt.Color(255, 255, 255));
+        homeBtn1.setText("HOME");
+        homeBtn1.addActionListener(this::homeBtn1ActionPerformed);
+        jPanel1.add(homeBtn1);
+        homeBtn1.setBounds(30, 170, 180, 30);
 
-        homeBtn.setBackground(new java.awt.Color(235, 233, 228));
-        homeBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        homeBtn.setText("Home");
-        homeBtn.addActionListener(this::homeBtnActionPerformed);
-        jPanel2.add(homeBtn);
-        homeBtn.setBounds(10, 170, 180, 30);
+        browseBtn1.setBackground(new java.awt.Color(231, 85, 49));
+        browseBtn1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        browseBtn1.setForeground(new java.awt.Color(255, 255, 255));
+        browseBtn1.setText("BROWSE");
+        browseBtn1.addActionListener(this::browseBtn1ActionPerformed);
+        jPanel1.add(browseBtn1);
+        browseBtn1.setBounds(30, 240, 180, 30);
 
-        browseBtn.setBackground(new java.awt.Color(235, 233, 228));
-        browseBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        browseBtn.setText("Browse");
-        browseBtn.addActionListener(this::browseBtnActionPerformed);
-        jPanel2.add(browseBtn);
-        browseBtn.setBounds(10, 220, 180, 30);
+        searchBtn1.setBackground(new java.awt.Color(231, 85, 49));
+        searchBtn1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        searchBtn1.setForeground(new java.awt.Color(255, 255, 255));
+        searchBtn1.setText("SEARCH");
+        searchBtn1.setToolTipText("");
+        searchBtn1.addActionListener(this::searchBtn1ActionPerformed);
+        jPanel1.add(searchBtn1);
+        searchBtn1.setBounds(30, 310, 180, 30);
 
-        searchBtn.setBackground(new java.awt.Color(235, 233, 228));
-        searchBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        searchBtn.setText("Search");
-        searchBtn.setToolTipText("");
-        searchBtn.addActionListener(this::searchBtnActionPerformed);
-        jPanel2.add(searchBtn);
-        searchBtn.setBounds(10, 270, 180, 30);
+        userserviceBtn1.setBackground(new java.awt.Color(231, 85, 49));
+        userserviceBtn1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        userserviceBtn1.setForeground(new java.awt.Color(255, 255, 255));
+        userserviceBtn1.setText("USER SERVICE");
+        userserviceBtn1.setToolTipText("");
+        userserviceBtn1.setActionCommand("userService");
+        userserviceBtn1.addActionListener(this::userserviceBtn1ActionPerformed);
+        jPanel1.add(userserviceBtn1);
+        userserviceBtn1.setBounds(30, 380, 180, 30);
 
-        userserviceBtn.setBackground(new java.awt.Color(235, 233, 228));
-        userserviceBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        userserviceBtn.setText("User Service");
-        userserviceBtn.setToolTipText("");
-        userserviceBtn.addActionListener(this::userserviceBtnActionPerformed);
-        jPanel2.add(userserviceBtn);
-        userserviceBtn.setBounds(10, 320, 180, 30);
-
-        logoutBtn.setBackground(new java.awt.Color(235, 233, 228));
-        logoutBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        logoutBtn.setText("Logout");
-        logoutBtn.addActionListener(this::logoutBtnActionPerformed);
-        jPanel2.add(logoutBtn);
-        logoutBtn.setBounds(10, 500, 180, 30);
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 200, 550);
-
-        titleLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        titleLabel.setFont(new java.awt.Font("Bell MT", 1, 48)); // NOI18N
         titleLabel.setText("Submit Claim");
         jPanel1.add(titleLabel);
-        titleLabel.setBounds(230, 30, 150, 22);
+        titleLabel.setBounds(950, 100, 300, 60);
 
-        foundItemIDLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        foundItemIDLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         foundItemIDLabel.setText("Found Item ID:");
         jPanel1.add(foundItemIDLabel);
-        foundItemIDLabel.setBounds(250, 80, 120, 17);
+        foundItemIDLabel.setBounds(1000, 200, 160, 30);
 
         foundItemIDTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(foundItemIDTextField);
-        foundItemIDTextField.setBounds(250, 110, 480, 23);
+        foundItemIDTextField.setBounds(750, 240, 670, 30);
 
-        proofLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        proofLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         proofLabel.setText("Proof of Ownership:");
         jPanel1.add(proofLabel);
-        proofLabel.setBounds(250, 150, 170, 17);
+        proofLabel.setBounds(640, 290, 220, 30);
 
         proofTextArea.setColumns(20);
         proofTextArea.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -141,12 +133,12 @@ public class SubmitClaim extends javax.swing.JFrame {
         jScrollPane1.setViewportView(proofTextArea);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(250, 180, 480, 90);
+        jScrollPane1.setBounds(640, 330, 870, 200);
 
-        foundItemsLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        foundItemsLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         foundItemsLabel.setText("Available Found Items:");
         jPanel1.add(foundItemsLabel);
-        foundItemsLabel.setBounds(250, 290, 170, 17);
+        foundItemsLabel.setBounds(640, 530, 250, 50);
 
         foundItemsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -167,23 +159,35 @@ public class SubmitClaim extends javax.swing.JFrame {
         jScrollPane2.setViewportView(foundItemsTable);
 
         jPanel1.add(jScrollPane2);
-        jScrollPane2.setBounds(250, 320, 480, 110);
+        jScrollPane2.setBounds(640, 580, 870, 360);
 
-        backBtn.setBackground(new java.awt.Color(244, 85, 0));
+        backBtn.setBackground(new java.awt.Color(231, 85, 49));
         backBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         backBtn.setForeground(new java.awt.Color(235, 233, 228));
-        backBtn.setText("Back");
+        backBtn.setText("BACK");
         backBtn.addActionListener(this::backBtnActionPerformed);
         jPanel1.add(backBtn);
-        backBtn.setBounds(250, 460, 120, 30);
+        backBtn.setBounds(640, 970, 180, 30);
 
-        submitBtn.setBackground(new java.awt.Color(244, 85, 0));
+        submitBtn.setBackground(new java.awt.Color(231, 85, 49));
         submitBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         submitBtn.setForeground(new java.awt.Color(235, 233, 228));
-        submitBtn.setText("Submit");
+        submitBtn.setText("SUBMIT");
         submitBtn.addActionListener(this::submitBtnActionPerformed);
         jPanel1.add(submitBtn);
-        submitBtn.setBounds(610, 460, 120, 30);
+        submitBtn.setBounds(1330, 970, 180, 30);
+
+        logoutBtn.setBackground(new java.awt.Color(235, 233, 228));
+        logoutBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        logoutBtn.setText("LOGOUT");
+        logoutBtn.addActionListener(this::logoutBtnActionPerformed);
+        jPanel1.add(logoutBtn);
+        logoutBtn.setBounds(30, 950, 180, 30);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/bluewhitebg.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 0, 240, 1080);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -191,48 +195,17 @@ public class SubmitClaim extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 33, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 35, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void homeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeBtnActionPerformed
-        Dashboard home = new Dashboard();
-        home.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_homeBtnActionPerformed
-
-    private void browseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseBtnActionPerformed
-        BrowseItems browse = new BrowseItems();
-        browse.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_browseBtnActionPerformed
-
-    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
-        SearchItems search = new SearchItems();
-        search.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_searchBtnActionPerformed
-
-    private void userserviceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userserviceBtnActionPerformed
-        UserService userService = new UserService();
-        userService.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_userserviceBtnActionPerformed
-
-    private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
-        SessionManager.getInstance().logout();
-        Login login = new Login();
-        login.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_logoutBtnActionPerformed
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         UserService userService = new UserService();
@@ -277,6 +250,42 @@ public class SubmitClaim extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_submitBtnActionPerformed
 
+    private void homeBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeBtn1ActionPerformed
+        // TODO add your handling code here:
+        Dashboard home = new Dashboard();
+        home.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_homeBtn1ActionPerformed
+
+    private void browseBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseBtn1ActionPerformed
+        // TODO add your handling code here:
+        BrowseItems browse = new BrowseItems();
+        browse.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_browseBtn1ActionPerformed
+
+    private void searchBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtn1ActionPerformed
+        // TODO add your handling code here:
+        SearchItems search = new SearchItems();
+        search.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_searchBtn1ActionPerformed
+
+    private void userserviceBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userserviceBtn1ActionPerformed
+        // TODO add your handling code here:
+        UserService userService = new UserService();
+        userService.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_userserviceBtn1ActionPerformed
+
+    private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
+        // TODO add your handling code here:
+        SessionManager.getInstance().logout();
+        Login login = new Login();
+        login.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_logoutBtnActionPerformed
+
     private void foundItemsTableMouseClicked(java.awt.event.MouseEvent evt) {
         int selectedRow = foundItemsTable.getSelectedRow();
         if (selectedRow >= 0) {
@@ -310,23 +319,23 @@ public class SubmitClaim extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
-    private javax.swing.JButton browseBtn;
+    private javax.swing.JButton browseBtn1;
     private javax.swing.JLabel foundItemIDLabel;
     private javax.swing.JTextField foundItemIDTextField;
     private javax.swing.JLabel foundItemsLabel;
     private javax.swing.JTable foundItemsTable;
-    private javax.swing.JButton homeBtn;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton homeBtn1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton logoutBtn;
     private javax.swing.JLabel proofLabel;
     private javax.swing.JTextArea proofTextArea;
-    private javax.swing.JButton searchBtn;
+    private javax.swing.JButton searchBtn1;
     private javax.swing.JButton submitBtn;
     private javax.swing.JLabel titleLabel;
-    private javax.swing.JButton userserviceBtn;
+    private javax.swing.JButton userserviceBtn1;
     // End of variables declaration//GEN-END:variables
 }

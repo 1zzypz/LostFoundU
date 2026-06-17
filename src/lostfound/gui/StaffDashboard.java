@@ -72,11 +72,7 @@ public class StaffDashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        claimsBtn = new javax.swing.JButton();
-        foundItemsBtn = new javax.swing.JButton();
-        logoutBtn = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         titleLabel = new javax.swing.JLabel();
         refreshBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -84,59 +80,37 @@ public class StaffDashboard extends javax.swing.JFrame {
         approveBtn = new javax.swing.JButton();
         rejectBtn = new javax.swing.JButton();
         verifyBtn = new javax.swing.JButton();
+        claimsBtn = new javax.swing.JButton();
+        foundItemsBtn = new javax.swing.JButton();
+        logoutBtn1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1920, 1080));
 
-        jPanel1.setBackground(new java.awt.Color(235, 233, 228));
-        jPanel1.setPreferredSize(new java.awt.Dimension(800, 550));
+        jPanel1.setBackground(new java.awt.Color(242, 224, 139));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jPanel1.setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(244, 85, 0));
-        jPanel2.setPreferredSize(new java.awt.Dimension(200, 550));
-        jPanel2.setLayout(null);
+        jLabel5.setFont(new java.awt.Font("STHupo", 1, 30)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(231, 85, 49));
+        jLabel5.setText("Lost&FoundU");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(30, 100, 190, 56);
 
-        jLabel4.setFont(new java.awt.Font("Nirmala Text", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(235, 233, 228));
-        jLabel4.setText("Lost&FoundU");
-        jPanel2.add(jLabel4);
-        jLabel4.setBounds(20, 50, 170, 56);
-
-        claimsBtn.setBackground(new java.awt.Color(235, 233, 228));
-        claimsBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        claimsBtn.setText("Claims");
-        claimsBtn.addActionListener(this::claimsBtnActionPerformed);
-        jPanel2.add(claimsBtn);
-        claimsBtn.setBounds(10, 170, 180, 30);
-
-        foundItemsBtn.setBackground(new java.awt.Color(235, 233, 228));
-        foundItemsBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        foundItemsBtn.setText("Found Items");
-        foundItemsBtn.addActionListener(this::foundItemsBtnActionPerformed);
-        jPanel2.add(foundItemsBtn);
-        foundItemsBtn.setBounds(10, 220, 180, 30);
-
-        logoutBtn.setBackground(new java.awt.Color(235, 233, 228));
-        logoutBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        logoutBtn.setText("Logout");
-        logoutBtn.addActionListener(this::logoutBtnActionPerformed);
-        jPanel2.add(logoutBtn);
-        logoutBtn.setBounds(10, 500, 180, 30);
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 200, 550);
-
-        titleLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        titleLabel.setFont(new java.awt.Font("Bell MT", 1, 48)); // NOI18N
         titleLabel.setText("Staff Dashboard - Claims");
         jPanel1.add(titleLabel);
-        titleLabel.setBounds(230, 50, 240, 22);
+        titleLabel.setBounds(790, 80, 670, 80);
 
-        refreshBtn.setBackground(new java.awt.Color(244, 85, 0));
-        refreshBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        refreshBtn.setBackground(new java.awt.Color(231, 85, 49));
+        refreshBtn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         refreshBtn.setForeground(new java.awt.Color(235, 233, 228));
-        refreshBtn.setText("Refresh");
+        refreshBtn.setText("REFRESH");
+        refreshBtn.setActionCommand("REFRESH");
         refreshBtn.addActionListener(this::refreshBtnActionPerformed);
         jPanel1.add(refreshBtn);
-        refreshBtn.setBounds(650, 50, 110, 30);
+        refreshBtn.setBounds(1480, 90, 150, 50);
 
         claimsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -152,31 +126,59 @@ public class StaffDashboard extends javax.swing.JFrame {
         jScrollPane1.setViewportView(claimsTable);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(230, 100, 530, 340);
+        jScrollPane1.setBounds(480, 180, 1150, 660);
 
-        approveBtn.setBackground(new java.awt.Color(244, 85, 0));
-        approveBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        approveBtn.setBackground(new java.awt.Color(231, 85, 49));
+        approveBtn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         approveBtn.setForeground(new java.awt.Color(235, 233, 228));
-        approveBtn.setText("Approve");
+        approveBtn.setText("APPROVE");
         approveBtn.addActionListener(this::approveBtnActionPerformed);
         jPanel1.add(approveBtn);
-        approveBtn.setBounds(500, 460, 120, 30);
+        approveBtn.setBounds(1660, 510, 150, 50);
 
-        rejectBtn.setBackground(new java.awt.Color(244, 85, 0));
-        rejectBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        rejectBtn.setBackground(new java.awt.Color(231, 85, 49));
+        rejectBtn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         rejectBtn.setForeground(new java.awt.Color(235, 233, 228));
-        rejectBtn.setText("Reject");
+        rejectBtn.setText("REJECT");
         rejectBtn.addActionListener(this::rejectBtnActionPerformed);
         jPanel1.add(rejectBtn);
-        rejectBtn.setBounds(640, 460, 120, 30);
+        rejectBtn.setBounds(1660, 600, 150, 50);
 
-        verifyBtn.setBackground(new java.awt.Color(244, 85, 0));
-        verifyBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        verifyBtn.setBackground(new java.awt.Color(231, 85, 49));
+        verifyBtn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         verifyBtn.setForeground(new java.awt.Color(235, 233, 228));
-        verifyBtn.setText("Verify Item");
+        verifyBtn.setText("VERIFY ITEM");
         verifyBtn.addActionListener(this::verifyBtnActionPerformed);
         jPanel1.add(verifyBtn);
-        verifyBtn.setBounds(640, 460, 120, 30);
+        verifyBtn.setBounds(1660, 410, 150, 50);
+
+        claimsBtn.setBackground(new java.awt.Color(231, 85, 49));
+        claimsBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        claimsBtn.setForeground(new java.awt.Color(255, 255, 255));
+        claimsBtn.setText("CLAIMS");
+        claimsBtn.addActionListener(this::claimsBtnActionPerformed);
+        jPanel1.add(claimsBtn);
+        claimsBtn.setBounds(30, 220, 180, 30);
+
+        foundItemsBtn.setBackground(new java.awt.Color(231, 85, 49));
+        foundItemsBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        foundItemsBtn.setForeground(new java.awt.Color(255, 255, 255));
+        foundItemsBtn.setText("FOUND ITEMS");
+        foundItemsBtn.addActionListener(this::foundItemsBtnActionPerformed);
+        jPanel1.add(foundItemsBtn);
+        foundItemsBtn.setBounds(30, 300, 180, 30);
+
+        logoutBtn1.setBackground(new java.awt.Color(235, 233, 228));
+        logoutBtn1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        logoutBtn1.setText("LOGOUT");
+        logoutBtn1.addActionListener(this::logoutBtn1ActionPerformed);
+        jPanel1.add(logoutBtn1);
+        logoutBtn1.setBounds(30, 950, 180, 30);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/bluewhitebg.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 0, 240, 1080);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -184,13 +186,13 @@ public class StaffDashboard extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 33, Short.MAX_VALUE))
+                .addGap(0, 12, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 35, Short.MAX_VALUE))
+                .addGap(0, 12, Short.MAX_VALUE))
         );
 
         pack();
@@ -204,13 +206,6 @@ public class StaffDashboard extends javax.swing.JFrame {
         loadFoundItems();
     }
 
-    private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
-        SessionManager.getInstance().logout();
-        Login login = new Login();
-        login.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_logoutBtnActionPerformed
-
     private void refreshBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshBtnActionPerformed
         if (viewingClaims) {
             loadClaims();
@@ -218,6 +213,14 @@ public class StaffDashboard extends javax.swing.JFrame {
             loadFoundItems();
         }
     }//GEN-LAST:event_refreshBtnActionPerformed
+
+    private void logoutBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtn1ActionPerformed
+        // TODO add your handling code here:
+        SessionManager.getInstance().logout();
+        Login login = new Login();
+        login.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_logoutBtn1ActionPerformed
 
     private void approveBtnActionPerformed(java.awt.event.ActionEvent evt) {
         if (!viewingClaims) {
@@ -339,17 +342,17 @@ public class StaffDashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton approveBtn;
     private javax.swing.JButton claimsBtn;
     private javax.swing.JTable claimsTable;
     private javax.swing.JButton foundItemsBtn;
-    private javax.swing.JButton logoutBtn;
-    private javax.swing.JButton approveBtn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton logoutBtn1;
     private javax.swing.JButton refreshBtn;
     private javax.swing.JButton rejectBtn;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel titleLabel;
     private javax.swing.JButton verifyBtn;
     // End of variables declaration//GEN-END:variables

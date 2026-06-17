@@ -18,7 +18,7 @@ public class StaffLogin extends javax.swing.JFrame {
     private DBConnection connection;
     private StaffDA staffDA;
     /**
-     * Creates new form StaffLogin
+     * Creates new form Login
      */
     public StaffLogin() {
         initComponents();
@@ -37,74 +37,108 @@ public class StaffLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        staffloginLabel = new javax.swing.JLabel();
-        staffidLabel = new javax.swing.JLabel();
-        staffidTextField = new javax.swing.JTextField();
-        passwordLabel = new javax.swing.JLabel();
+        nameLabel = new javax.swing.JLabel();
+        emailTextField = new javax.swing.JTextField();
         passwordTextField = new javax.swing.JPasswordField();
-        backtologinLink = new javax.swing.JLabel();
+        passwordLabel = new javax.swing.JLabel();
+        forgotPassword = new javax.swing.JLabel();
+        userLogin = new javax.swing.JLabel();
         loginBtn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        register = new javax.swing.JLabel();
+        title = new javax.swing.JLabel();
+        staffLogin = new javax.swing.JLabel();
+        logostamp = new javax.swing.JLabel();
+        bluewhitebg = new javax.swing.JLabel();
+        bgpic = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(235, 233, 228));
-        jPanel1.setPreferredSize(new java.awt.Dimension(800, 550));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jPanel1.setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(244, 85, 0));
-        jPanel2.setPreferredSize(new java.awt.Dimension(270, 550));
-        jPanel2.setLayout(null);
+        nameLabel.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
+        nameLabel.setText("Email:");
+        jPanel1.add(nameLabel);
+        nameLabel.setBounds(1010, 420, 60, 21);
 
-        staffloginLabel.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        staffloginLabel.setForeground(new java.awt.Color(235, 233, 228));
-        staffloginLabel.setText("Staff Login");
-        jPanel2.add(staffloginLabel);
-        staffloginLabel.setBounds(70, 260, 130, 28);
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 270, 550);
-
-        staffidLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        staffidLabel.setText("Staff Email:");
-        jPanel1.add(staffidLabel);
-        staffidLabel.setBounds(330, 200, 100, 17);
-
-        staffidTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jPanel1.add(staffidTextField);
-        staffidTextField.setBounds(330, 230, 410, 23);
-
-        passwordLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        passwordLabel.setText("Password:");
-        jPanel1.add(passwordLabel);
-        passwordLabel.setBounds(330, 280, 90, 17);
+        emailTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        emailTextField.addActionListener(this::emailTextFieldActionPerformed);
+        jPanel1.add(emailTextField);
+        emailTextField.setBounds(1010, 450, 410, 23);
 
         passwordTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(passwordTextField);
-        passwordTextField.setBounds(330, 310, 410, 23);
+        passwordTextField.setBounds(1010, 520, 410, 23);
 
-        backtologinLink.setText("<html><font color=\"blue\"><u>Back to login</u></font></html>");
-        backtologinLink.addMouseListener(new java.awt.event.MouseAdapter() {
+        passwordLabel.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
+        passwordLabel.setText("Password:");
+        jPanel1.add(passwordLabel);
+        passwordLabel.setBounds(1010, 490, 90, 21);
+
+        forgotPassword.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
+        forgotPassword.setText("<html><font color=\"blue\"><u>Forgot Password?</u></font></html>");
+        forgotPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                backtologinLinkMouseClicked(evt);
+                forgotPasswordMouseClicked(evt);
             }
         });
-        jPanel1.add(backtologinLink);
-        backtologinLink.setBounds(500, 400, 80, 16);
+        jPanel1.add(forgotPassword);
+        forgotPassword.setBounds(1010, 570, 110, 16);
+
+        userLogin.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
+        userLogin.setText("<html><font color=\"blue\"><u>User Login</u></font></html>");
+        userLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                userLoginMouseClicked(evt);
+            }
+        });
+        jPanel1.add(userLogin);
+        userLogin.setBounds(1350, 570, 70, 16);
 
         loginBtn.setBackground(new java.awt.Color(244, 85, 0));
         loginBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         loginBtn.setForeground(new java.awt.Color(235, 233, 228));
-        loginBtn.setText("Login");
+        loginBtn.setText("LOGIN");
         loginBtn.addActionListener(this::loginBtnActionPerformed);
         jPanel1.add(loginBtn);
-        loginBtn.setBounds(330, 360, 410, 30);
+        loginBtn.setBounds(1010, 610, 410, 30);
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/logo.png"))); // NOI18N
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(360, 20, 360, 140);
+        register.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
+        register.setText("<html>Don't have an account? <font color=\"blue\"><u>Register</u></font></html>");
+        register.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                registerMouseClicked(evt);
+            }
+        });
+        jPanel1.add(register);
+        register.setBounds(1010, 660, 190, 30);
+
+        title.setFont(new java.awt.Font("STHupo", 1, 60)); // NOI18N
+        title.setForeground(new java.awt.Color(231, 85, 49));
+        title.setText("lost&foundU");
+        jPanel1.add(title);
+        title.setBounds(190, 470, 360, 62);
+
+        staffLogin.setBackground(new java.awt.Color(0, 0, 0));
+        staffLogin.setFont(new java.awt.Font("Bell MT", 1, 48)); // NOI18N
+        staffLogin.setText("Staff Login");
+        jPanel1.add(staffLogin);
+        staffLogin.setBounds(1010, 330, 250, 54);
+
+        logostamp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/logostampp.png"))); // NOI18N
+        jPanel1.add(logostamp);
+        logostamp.setBounds(1560, 40, 320, 390);
+
+        bluewhitebg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bluewhitebg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/bluewhitebg.png"))); // NOI18N
+        jPanel1.add(bluewhitebg);
+        bluewhitebg.setBounds(730, 0, 1190, 1080);
+
+        bgpic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bgpic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/bgpic.jpg"))); // NOI18N
+        jPanel1.add(bgpic);
+        bgpic.setBounds(0, 0, 730, 1080);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -112,56 +146,86 @@ public class StaffLogin extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 59, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 38, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void emailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailTextFieldActionPerformed
+
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
-        String email = staffidTextField.getText().trim();
+        String email = emailTextField.getText().trim();
         String password = new String(passwordTextField.getPassword()).trim();
-        
+
+        //input field validation
         if(email.isEmpty() || password.isEmpty()){
-            JOptionPane.showMessageDialog(this, "Fields cannot be empty!", "Error", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Please fill in all the fields!", "Validation Error", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        
-        int result = staffDA.staffLogin(email, password);
-        
-        if(result == 1){
+
+        //query
+        int loginResult = staffDA.staffLogin(email, password);
+
+        switch (loginResult){
+            case 1:
             String[] sessionStaff = staffDA.getStaffSessionByEmail(email);
             if (sessionStaff == null) {
                 JOptionPane.showMessageDialog(this, "Login successful, but staff session could not be loaded.", "System Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
             SessionManager.getInstance().loginDatabaseStaff(sessionStaff[0], sessionStaff[1], sessionStaff[2]);
-            JOptionPane.showMessageDialog(this, "Login Successful!");
-            
+            JOptionPane.showMessageDialog(this, "Login Succesful!\nWelcome Back, " + sessionStaff[1] + ".", "Success", JOptionPane.INFORMATION_MESSAGE);
+
             StaffDashboard staffDashboard = new StaffDashboard();
             staffDashboard.setVisible(true);
             this.dispose();
-        } else if (result == -1){
-            JOptionPane.showMessageDialog(this, "Incorrect password.", "Login Failed", JOptionPane.ERROR_MESSAGE);
-        } else if (result == -2){
-            JOptionPane.showMessageDialog(this, "Database connection error. Please check MySQL/XAMPP.", "System Error", JOptionPane.ERROR_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(this, "Staff account does not exist.", "Login Failed", JOptionPane.ERROR_MESSAGE);
+            break;
+
+            case 0:
+            JOptionPane.showMessageDialog(this, "The email address entered does not exist in our database.", "Login Failed", JOptionPane.ERROR_MESSAGE);
+            break;
+
+            case -1:
+            JOptionPane.showMessageDialog(this, "Incorrect password! Please try again.", "Login Failed", JOptionPane.ERROR_MESSAGE);
+            passwordTextField.setText("");
+            passwordTextField.requestFocus();
+            break;
+
+            default:
+            JOptionPane.showMessageDialog(this, "An unexpected error occured while while connecting to the database.", "System Error", JOptionPane.ERROR_MESSAGE);
+            break;
         }
     }//GEN-LAST:event_loginBtnActionPerformed
 
-    private void backtologinLinkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backtologinLinkMouseClicked
+    private void forgotPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_forgotPasswordMouseClicked
         // TODO add your handling code here:
-        Login login = new Login();
-        login.setVisible(true);
+        ForgotPassword pass = new ForgotPassword();
+        pass.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_backtologinLinkMouseClicked
+    }//GEN-LAST:event_forgotPasswordMouseClicked
+
+    private void userLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userLoginMouseClicked
+        // TODO add your handling code here:
+        Login loginFrame = new Login();
+        loginFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_userLoginMouseClicked
+
+    private void registerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerMouseClicked
+        // TODO add your handling code here:
+        Register registerFrame = new Register();
+        registerFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_registerMouseClicked
 
     /**
      * @param args the command line arguments
@@ -189,15 +253,19 @@ public class StaffLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel backtologinLink;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel bgpic;
+    private javax.swing.JLabel bluewhitebg;
+    private javax.swing.JTextField emailTextField;
+    private javax.swing.JLabel forgotPassword;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JButton loginBtn;
+    private javax.swing.JLabel logostamp;
+    private javax.swing.JLabel nameLabel;
     private javax.swing.JLabel passwordLabel;
     private javax.swing.JPasswordField passwordTextField;
-    private javax.swing.JLabel staffidLabel;
-    private javax.swing.JTextField staffidTextField;
-    private javax.swing.JLabel staffloginLabel;
+    private javax.swing.JLabel register;
+    private javax.swing.JLabel staffLogin;
+    private javax.swing.JLabel title;
+    private javax.swing.JLabel userLogin;
     // End of variables declaration//GEN-END:variables
 }
