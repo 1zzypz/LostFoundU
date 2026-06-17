@@ -10,7 +10,7 @@ import lostfound.da.UserDA;
 import lostfound.session.SessionManager;
 /**
  *
- * @author danis
+ * @author izzati
  */
 public class Login extends javax.swing.JFrame {
     
@@ -128,7 +128,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/logostampp.png"))); // NOI18N
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(1560, 40, 320, 390);
+        jLabel8.setBounds(1560, 100, 250, 250);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/bluewhitebg.png"))); // NOI18N

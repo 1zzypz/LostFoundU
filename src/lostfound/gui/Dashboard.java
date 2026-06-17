@@ -9,7 +9,7 @@ import lostfound.session.SessionManager;
 
 /**
  *
- * @author danis
+ * @author izzati
  */
 public class Dashboard extends javax.swing.JFrame {
     
@@ -31,13 +31,13 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     private void addActivityRefreshButton() {
-        refreshActivityBtn = new javax.swing.JButton("Refresh");
-        refreshActivityBtn.setBackground(new java.awt.Color(244, 85, 0));
+        refreshActivityBtn = new javax.swing.JButton("REFRESH");
+        refreshActivityBtn.setBackground(new java.awt.Color(243,239,228));
         refreshActivityBtn.setFont(new java.awt.Font("Arial", 0, 14));
-        refreshActivityBtn.setForeground(new java.awt.Color(235, 233, 228));
+        refreshActivityBtn.setForeground(new java.awt.Color(0, 0, 0));
         refreshActivityBtn.addActionListener(evt -> loadActivityFeed());
         jPanel1.add(refreshActivityBtn);
-        refreshActivityBtn.setBounds(650, 220, 110, 30);
+        refreshActivityBtn.setBounds(1740, 280, 110, 30);
     }
 
     /**
