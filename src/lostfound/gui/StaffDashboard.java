@@ -107,7 +107,6 @@ public class StaffDashboard extends javax.swing.JFrame {
         refreshBtn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         refreshBtn.setForeground(new java.awt.Color(235, 233, 228));
         refreshBtn.setText("REFRESH");
-        refreshBtn.setActionCommand("REFRESH");
         refreshBtn.addActionListener(this::refreshBtnActionPerformed);
         jPanel1.add(refreshBtn);
         refreshBtn.setBounds(1480, 90, 150, 50);
