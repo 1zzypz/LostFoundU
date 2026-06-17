@@ -10,9 +10,11 @@ public class Notification {
     public static final String TYPE_CLAIM_REJECTED = "CLAIM_REJECTED";
     public static final String TYPE_ITEM_VERIFIED = "ITEM_VERIFIED";
 
+    //Static formatter shared across all Notification objects to format dates uniformly
     private static final DateTimeFormatter FORMATTER
             = DateTimeFormatter.ofPattern("dd MMM yyyy, hh:mm a");
 
+    //Encapsulation: private fields to hide internal state
     private String notifID;
     private String recipientID;
     private String message;
@@ -20,13 +22,15 @@ public class Notification {
     private LocalDateTime timestamp;
     private boolean readStatus;
 
+    //Constructor to initialize a new Notification obj
     public Notification(String recipientID, String message, String type) {
+        //Auto-generate a unique 60character ID and append it to "NTF-"
         this.notifID = "NTF-" + UUID.randomUUID().toString().substring(0, 6).toUpperCase();
         this.recipientID = recipientID;
         this.message = message;
         this.type = type;
-        this.timestamp = LocalDateTime.now();
-        this.readStatus = false;
+        this.timestamp = LocalDateTime.now(); //Automatically capture the exact time of creation
+        this.readStatus = false; //By default, a new notification is unread
     }
 
     public String getNotifID() {
@@ -54,7 +58,9 @@ public class Notification {
     }
 
     public String getNotifDetails() {
+        //if readStatus is false (unread), marker is "* ", otherwise empty string
         String marker = readStatus ? "" : "* ";
+        //Combine the formatted date, the read marker, and the message
         return "[" + timestamp.format(FORMATTER) + "] " + marker + message;
     }
 
@@ -64,12 +70,14 @@ public class Notification {
                 TYPE_CLAIM_APPROVED);
     }
 
+    //Create a rejection notification
     public static Notification claimRejected(String recipientID, String claimID, String reason) {
         return new Notification(recipientID,
                 "Your claim " + claimID + " was rejected. Reason: " + reason,
                 TYPE_CLAIM_REJECTED);
     }
 
+    //Create an item verification notification
     public static Notification itemVerified(String recipientID, String itemName) {
         return new Notification(recipientID,
                 "Your found item was verified: " + itemName,
