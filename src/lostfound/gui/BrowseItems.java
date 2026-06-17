@@ -124,7 +124,7 @@ public class BrowseItems extends javax.swing.JFrame {
 
         logoutBtn.setBackground(new java.awt.Color(242, 224, 139));
         logoutBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        logoutBtn.setText("Logout");
+        logoutBtn.setText("LOGOUT");
         logoutBtn.addActionListener(this::logoutBtnActionPerformed);
         jPanel1.add(logoutBtn);
         logoutBtn.setBounds(30, 940, 180, 30);
