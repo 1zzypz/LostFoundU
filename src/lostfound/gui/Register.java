@@ -37,8 +37,6 @@ public class Register extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        registerLabel = new javax.swing.JLabel();
         passwordLabel = new javax.swing.JLabel();
         nameLabel = new javax.swing.JLabel();
         nameTextField = new javax.swing.JTextField();
@@ -49,7 +47,11 @@ public class Register extends javax.swing.JFrame {
         submitBtn = new javax.swing.JButton();
         loginClickHere = new javax.swing.JLabel();
         passwordTextField = new javax.swing.JPasswordField();
+        registerLabel1 = new javax.swing.JLabel();
+        registerLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,60 +59,49 @@ public class Register extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jPanel1.setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(244, 85, 0));
-        jPanel2.setPreferredSize(new java.awt.Dimension(270, 550));
-        jPanel2.setLayout(null);
-
-        registerLabel.setBackground(new java.awt.Color(235, 233, 228));
-        registerLabel.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        registerLabel.setForeground(new java.awt.Color(235, 233, 228));
-        registerLabel.setText("Register");
-        jPanel2.add(registerLabel);
-        registerLabel.setBounds(80, 260, 100, 28);
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 270, 550);
-
-        passwordLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        passwordLabel.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
         passwordLabel.setText("Password:");
         jPanel1.add(passwordLabel);
-        passwordLabel.setBounds(330, 320, 130, 17);
+        passwordLabel.setBounds(1010, 630, 130, 17);
 
-        nameLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        nameLabel.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
         nameLabel.setText("Name:");
         jPanel1.add(nameLabel);
-        nameLabel.setBounds(330, 110, 50, 17);
+        nameLabel.setBounds(1010, 420, 60, 21);
 
         nameTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        nameTextField.addActionListener(this::nameTextFieldActionPerformed);
         jPanel1.add(nameTextField);
-        nameTextField.setBounds(330, 140, 420, 22);
+        nameTextField.setBounds(1010, 450, 420, 22);
 
-        emailLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        emailLabel.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
         emailLabel.setText("Email:");
         jPanel1.add(emailLabel);
-        emailLabel.setBounds(330, 180, 50, 17);
+        emailLabel.setBounds(1010, 490, 50, 21);
 
         emailTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        emailTextField.addActionListener(this::emailTextFieldActionPerformed);
         jPanel1.add(emailTextField);
-        emailTextField.setBounds(330, 210, 420, 23);
+        emailTextField.setBounds(1010, 520, 420, 23);
 
-        phonenumberLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        phonenumberLabel.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
         phonenumberLabel.setText("Phone Number:");
         jPanel1.add(phonenumberLabel);
-        phonenumberLabel.setBounds(330, 250, 130, 17);
+        phonenumberLabel.setBounds(1010, 560, 130, 21);
 
         phoneTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(phoneTextField);
-        phoneTextField.setBounds(330, 280, 420, 23);
+        phoneTextField.setBounds(1010, 590, 420, 23);
 
         submitBtn.setBackground(new java.awt.Color(244, 85, 0));
         submitBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         submitBtn.setForeground(new java.awt.Color(235, 233, 228));
-        submitBtn.setText("Submit");
+        submitBtn.setText("SUBMIT");
         submitBtn.addActionListener(this::submitBtnActionPerformed);
         jPanel1.add(submitBtn);
-        submitBtn.setBounds(330, 430, 420, 30);
+        submitBtn.setBounds(1010, 730, 420, 30);
 
+        loginClickHere.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
         loginClickHere.setText("<html>Already have an account? <font color=\"blue\"><u>Click here</u></font></html>");
         loginClickHere.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -118,17 +109,40 @@ public class Register extends javax.swing.JFrame {
             }
         });
         jPanel1.add(loginClickHere);
-        loginClickHere.setBounds(330, 390, 210, 16);
+        loginClickHere.setBounds(1010, 690, 210, 16);
 
         passwordTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         passwordTextField.addActionListener(this::passwordTextFieldActionPerformed);
         jPanel1.add(passwordTextField);
-        passwordTextField.setBounds(330, 350, 420, 23);
+        passwordTextField.setBounds(1010, 660, 420, 23);
+
+        registerLabel1.setBackground(new java.awt.Color(235, 233, 228));
+        registerLabel1.setFont(new java.awt.Font("STHupo", 1, 60)); // NOI18N
+        registerLabel1.setForeground(new java.awt.Color(231, 85, 49));
+        registerLabel1.setText("lost&foundU");
+        jPanel1.add(registerLabel1);
+        registerLabel1.setBounds(190, 470, 349, 50);
+
+        registerLabel.setBackground(new java.awt.Color(235, 233, 228));
+        registerLabel.setFont(new java.awt.Font("Bell MT", 1, 48)); // NOI18N
+        registerLabel.setText("Register");
+        jPanel1.add(registerLabel);
+        registerLabel.setBounds(1010, 330, 190, 60);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/logo.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/logostampp.png"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(360, 0, 360, 110);
+        jLabel1.setBounds(1560, 100, 250, 250);
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/bluewhitebg.png"))); // NOI18N
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(730, 0, 1190, 1080);
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/bgpic.jpg"))); // NOI18N
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(0, 0, 730, 1080);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -216,6 +230,14 @@ public class Register extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordTextFieldActionPerformed
 
+    private void nameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameTextFieldActionPerformed
+
+    private void emailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailTextFieldActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -245,8 +267,9 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel emailLabel;
     private javax.swing.JTextField emailTextField;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel loginClickHere;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JTextField nameTextField;
@@ -255,6 +278,7 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JTextField phoneTextField;
     private javax.swing.JLabel phonenumberLabel;
     private javax.swing.JLabel registerLabel;
+    private javax.swing.JLabel registerLabel1;
     private javax.swing.JButton submitBtn;
     // End of variables declaration//GEN-END:variables
 }

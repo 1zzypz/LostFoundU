@@ -76,24 +76,25 @@ public class ForgotPassword extends javax.swing.JFrame {
         jPanel1.add(confirmpassTextField);
         confirmpassTextField.setBounds(1010, 590, 410, 22);
 
-        newpassLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        newpassLabel.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
         newpassLabel.setText("New Password:");
         jPanel1.add(newpassLabel);
-        newpassLabel.setBounds(1010, 490, 130, 17);
+        newpassLabel.setBounds(1010, 490, 130, 21);
 
-        confirmpassLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        confirmpassLabel.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
         confirmpassLabel.setText("Confirm Password:");
         jPanel1.add(confirmpassLabel);
-        confirmpassLabel.setBounds(1010, 560, 140, 17);
+        confirmpassLabel.setBounds(1010, 560, 160, 21);
 
         changepassBtn.setBackground(new java.awt.Color(244, 85, 0));
         changepassBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         changepassBtn.setForeground(new java.awt.Color(235, 233, 228));
-        changepassBtn.setText("Change password");
+        changepassBtn.setText("CHANGE PASSWORD");
         changepassBtn.addActionListener(this::changepassBtnActionPerformed);
         jPanel1.add(changepassBtn);
         changepassBtn.setBounds(1010, 630, 410, 30);
 
+        jLabel2.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
         jLabel2.setText("<html><font color=\"blue\"><u>Back to login</u></font></html>");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -119,7 +120,7 @@ public class ForgotPassword extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Bell MT", 1, 48)); // NOI18N
         jLabel6.setText("Forgot Password");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(1010, 330, 410, 54);
+        jLabel6.setBounds(1010, 330, 410, 60);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/logostampp.png"))); // NOI18N
         jPanel1.add(jLabel5);
