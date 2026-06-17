@@ -37,8 +37,6 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        loginLabel = new javax.swing.JLabel();
         nameLabel = new javax.swing.JLabel();
         emailTextField = new javax.swing.JTextField();
         passwordTextField = new javax.swing.JPasswordField();
@@ -47,47 +45,37 @@ public class Login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         loginBtn = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(235, 233, 228));
-        jPanel1.setPreferredSize(new java.awt.Dimension(800, 550));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jPanel1.setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(244, 85, 0));
-        jPanel2.setPreferredSize(new java.awt.Dimension(270, 550));
-        jPanel2.setLayout(null);
-
-        loginLabel.setBackground(new java.awt.Color(235, 233, 228));
-        loginLabel.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        loginLabel.setForeground(new java.awt.Color(235, 233, 228));
-        loginLabel.setText("Login");
-        jPanel2.add(loginLabel);
-        loginLabel.setBounds(100, 260, 70, 30);
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 270, 550);
-
-        nameLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        nameLabel.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
         nameLabel.setText("Email:");
         jPanel1.add(nameLabel);
-        nameLabel.setBounds(330, 160, 60, 17);
+        nameLabel.setBounds(1010, 420, 60, 21);
 
         emailTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         emailTextField.addActionListener(this::emailTextFieldActionPerformed);
         jPanel1.add(emailTextField);
-        emailTextField.setBounds(330, 190, 410, 23);
+        emailTextField.setBounds(1010, 450, 410, 23);
 
         passwordTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(passwordTextField);
-        passwordTextField.setBounds(330, 270, 410, 23);
+        passwordTextField.setBounds(1010, 520, 410, 23);
 
-        passwordLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        passwordLabel.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
         passwordLabel.setText("Password:");
         jPanel1.add(passwordLabel);
-        passwordLabel.setBounds(330, 240, 80, 17);
+        passwordLabel.setBounds(1010, 490, 90, 21);
 
+        jLabel2.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
         jLabel2.setText("<html><font color=\"blue\"><u>Forgot Password?</u></font></html>");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -95,8 +83,9 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(330, 320, 110, 16);
+        jLabel2.setBounds(1010, 570, 110, 16);
 
+        jLabel4.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
         jLabel4.setText("<html><font color=\"blue\"><u>Staff Login</u></font></html>");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -104,16 +93,17 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(680, 320, 70, 16);
+        jLabel4.setBounds(1350, 570, 70, 16);
 
         loginBtn.setBackground(new java.awt.Color(244, 85, 0));
         loginBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         loginBtn.setForeground(new java.awt.Color(235, 233, 228));
-        loginBtn.setText("Login");
+        loginBtn.setText("LOGIN");
         loginBtn.addActionListener(this::loginBtnActionPerformed);
         jPanel1.add(loginBtn);
-        loginBtn.setBounds(330, 360, 410, 30);
+        loginBtn.setBounds(1010, 610, 410, 30);
 
+        jLabel5.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
         jLabel5.setText("<html>Don't have an account? <font color=\"blue\"><u>Register</u></font></html>");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -121,13 +111,29 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(450, 400, 190, 16);
+        jLabel5.setBounds(1010, 660, 190, 16);
+
+        jLabel7.setFont(new java.awt.Font("STHupo", 1, 60)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(231, 85, 49));
+        jLabel7.setText("lost&foundU");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(190, 470, 360, 62);
+
+        jLabel6.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel6.setFont(new java.awt.Font("Bell MT", 1, 48)); // NOI18N
+        jLabel6.setText("Login");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(1010, 330, 159, 54);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/logo.png"))); // NOI18N
-        jLabel1.setPreferredSize(new java.awt.Dimension(300, 100));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/bluewhitebg.png"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(360, 20, 360, 140);
+        jLabel1.setBounds(730, 0, 1190, 1080);
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/bgpic.jpg"))); // NOI18N
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(0, 0, 730, 1080);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -135,13 +141,13 @@ public class Login extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 37, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 48, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -245,12 +251,13 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField emailTextField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JButton loginBtn;
-    private javax.swing.JLabel loginLabel;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JLabel passwordLabel;
     private javax.swing.JPasswordField passwordTextField;
