@@ -42,6 +42,7 @@ public class UserService extends javax.swing.JFrame {
         submitclaimBtn = new javax.swing.JButton();
         editlostreportBtn = new javax.swing.JButton();
         viewclaimsBtn = new javax.swing.JButton();
+        logoutBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -137,6 +138,13 @@ public class UserService extends javax.swing.JFrame {
         jPanel1.add(viewclaimsBtn);
         viewclaimsBtn.setBounds(900, 580, 400, 150);
 
+        logoutBtn.setBackground(new java.awt.Color(235, 233, 228));
+        logoutBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        logoutBtn.setText("LOGOUT");
+        logoutBtn.addActionListener(this::logoutBtnActionPerformed);
+        jPanel1.add(logoutBtn);
+        logoutBtn.setBounds(30, 950, 180, 30);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/bluewhitebg.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1);
@@ -202,6 +210,14 @@ public class UserService extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_userserviceBtn1ActionPerformed
 
+    private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
+        // TODO add your handling code here:
+        SessionManager.getInstance().logout();
+        Login login = new Login();
+        login.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_logoutBtnActionPerformed
+
     private void submitclaimBtnActionPerformed(java.awt.event.ActionEvent evt) {
         SubmitClaim submitClaim = new SubmitClaim();
         submitClaim.setVisible(true);
@@ -253,6 +269,7 @@ public class UserService extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton logoutBtn;
     private javax.swing.JButton reportlostitemBtn;
     private javax.swing.JButton searchBtn1;
     private javax.swing.JButton submitclaimBtn;
