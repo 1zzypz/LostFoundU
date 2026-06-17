@@ -37,7 +37,7 @@ public class StaffLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        emailLabel = new javax.swing.JLabel();
+        nameLabel = new javax.swing.JLabel();
         emailTextField = new javax.swing.JTextField();
         passwordTextField = new javax.swing.JPasswordField();
         passwordLabel = new javax.swing.JLabel();
@@ -57,10 +57,10 @@ public class StaffLogin extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jPanel1.setLayout(null);
 
-        emailLabel.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
-        emailLabel.setText("Email:");
-        jPanel1.add(emailLabel);
-        emailLabel.setBounds(1010, 420, 60, 21);
+        nameLabel.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
+        nameLabel.setText("Email:");
+        jPanel1.add(nameLabel);
+        nameLabel.setBounds(1010, 420, 60, 21);
 
         emailTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         emailTextField.addActionListener(this::emailTextFieldActionPerformed);
@@ -255,12 +255,12 @@ public class StaffLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bgpic;
     private javax.swing.JLabel bluewhitebg;
-    private javax.swing.JLabel emailLabel;
     private javax.swing.JTextField emailTextField;
     private javax.swing.JLabel forgotPassword;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton loginBtn;
     private javax.swing.JLabel logostamp;
+    private javax.swing.JLabel nameLabel;
     private javax.swing.JLabel passwordLabel;
     private javax.swing.JPasswordField passwordTextField;
     private javax.swing.JLabel register;

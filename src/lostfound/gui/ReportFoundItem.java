@@ -26,6 +26,7 @@ public class ReportFoundItem extends javax.swing.JFrame {
      */
     public ReportFoundItem() {
         initComponents();
+        this.setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
         
         categoryDropDown.removeAllItems();
         for(Category cat : Category.values()){
@@ -44,13 +45,6 @@ public class ReportFoundItem extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        homeBtn = new javax.swing.JButton();
-        browseBtn = new javax.swing.JButton();
-        searchBtn = new javax.swing.JButton();
-        userserviceBtn = new javax.swing.JButton();
-        logoutBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         categoryDropDown = new javax.swing.JComboBox<>();
         descriptionLabel = new javax.swing.JLabel();
@@ -68,146 +62,161 @@ public class ReportFoundItem extends javax.swing.JFrame {
         datefoundTextField = new javax.swing.JFormattedTextField();
         datefoundLabel = new javax.swing.JLabel();
         storeatTextField = new javax.swing.JTextField();
+        homeBtn = new javax.swing.JButton();
+        browseBtn = new javax.swing.JButton();
+        searchBtn = new javax.swing.JButton();
+        userserviceBtn = new javax.swing.JButton();
+        logoutBtn = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1920, 1080));
 
-        jPanel1.setBackground(new java.awt.Color(235, 233, 228));
-        jPanel1.setPreferredSize(new java.awt.Dimension(800, 550));
+        jPanel1.setBackground(new java.awt.Color(242, 224, 139));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jPanel1.setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(244, 85, 0));
-        jPanel2.setMinimumSize(new java.awt.Dimension(200, 550));
-        jPanel2.setLayout(null);
-
-        jLabel5.setFont(new java.awt.Font("Nirmala Text", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(235, 233, 228));
-        jLabel5.setText("Lost&FoundU");
-        jPanel2.add(jLabel5);
-        jLabel5.setBounds(20, 50, 170, 56);
-
-        homeBtn.setBackground(new java.awt.Color(235, 233, 228));
-        homeBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        homeBtn.setText("Home");
-        homeBtn.addActionListener(this::homeBtnActionPerformed);
-        jPanel2.add(homeBtn);
-        homeBtn.setBounds(10, 170, 180, 30);
-
-        browseBtn.setBackground(new java.awt.Color(235, 233, 228));
-        browseBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        browseBtn.setText("Browse");
-        browseBtn.addActionListener(this::browseBtnActionPerformed);
-        jPanel2.add(browseBtn);
-        browseBtn.setBounds(10, 220, 180, 30);
-
-        searchBtn.setBackground(new java.awt.Color(235, 233, 228));
-        searchBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        searchBtn.setText("Search");
-        searchBtn.setToolTipText("");
-        searchBtn.addActionListener(this::searchBtnActionPerformed);
-        jPanel2.add(searchBtn);
-        searchBtn.setBounds(10, 270, 180, 30);
-
-        userserviceBtn.setBackground(new java.awt.Color(235, 233, 228));
-        userserviceBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        userserviceBtn.setText("User Service");
-        userserviceBtn.setToolTipText("");
-        userserviceBtn.addActionListener(this::userserviceBtnActionPerformed);
-        jPanel2.add(userserviceBtn);
-        userserviceBtn.setBounds(10, 320, 180, 30);
-
-        logoutBtn.setBackground(new java.awt.Color(235, 233, 228));
-        logoutBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        logoutBtn.setText("Logout");
-        logoutBtn.addActionListener(this::logoutBtnActionPerformed);
-        jPanel2.add(logoutBtn);
-        logoutBtn.setBounds(10, 500, 180, 30);
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 200, 550);
-
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Bell MT", 1, 48)); // NOI18N
         jLabel3.setText("File a New Found Item Report");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(230, 20, 270, 22);
+        jLabel3.setBounds(520, 120, 650, 40);
 
         categoryDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(categoryDropDown);
-        categoryDropDown.setBounds(510, 100, 220, 22);
+        categoryDropDown.setBounds(900, 250, 220, 30);
 
-        descriptionLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        descriptionLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         descriptionLabel.setText("Description:");
         jPanel1.add(descriptionLabel);
-        descriptionLabel.setBounds(250, 140, 100, 17);
+        descriptionLabel.setBounds(550, 290, 140, 40);
 
         descriptionTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(descriptionTextField);
-        descriptionTextField.setBounds(250, 170, 480, 23);
+        descriptionTextField.setBounds(550, 330, 580, 30);
 
-        colorLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        colorLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         colorLabel.setText("Color:");
         jPanel1.add(colorLabel);
-        colorLabel.setBounds(250, 210, 70, 16);
+        colorLabel.setBounds(550, 370, 70, 30);
 
         locationfoundTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(locationfoundTextField);
-        locationfoundTextField.setBounds(250, 310, 480, 23);
+        locationfoundTextField.setBounds(550, 490, 580, 30);
 
-        locationfoundLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        locationfoundLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         locationfoundLabel.setText("Location Found:");
         jPanel1.add(locationfoundLabel);
-        locationfoundLabel.setBounds(250, 280, 120, 17);
+        locationfoundLabel.setBounds(550, 450, 180, 28);
 
-        backBtn.setBackground(new java.awt.Color(244, 85, 0));
+        backBtn.setBackground(new java.awt.Color(231, 85, 49));
         backBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         backBtn.setForeground(new java.awt.Color(235, 233, 228));
-        backBtn.setText("Back");
+        backBtn.setText("BACK");
         backBtn.addActionListener(this::backBtnActionPerformed);
         jPanel1.add(backBtn);
-        backBtn.setBounds(250, 500, 120, 30);
+        backBtn.setBounds(360, 740, 180, 30);
 
-        submitBtn.setBackground(new java.awt.Color(244, 85, 0));
+        submitBtn.setBackground(new java.awt.Color(231, 85, 49));
         submitBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         submitBtn.setForeground(new java.awt.Color(235, 233, 228));
-        submitBtn.setText("Submit");
+        submitBtn.setText("SUBMIT");
+        submitBtn.setMaximumSize(new java.awt.Dimension(136, 24));
+        submitBtn.setMinimumSize(new java.awt.Dimension(136, 24));
         submitBtn.addActionListener(this::submitBtnActionPerformed);
         jPanel1.add(submitBtn);
-        submitBtn.setBounds(610, 500, 120, 30);
+        submitBtn.setBounds(1150, 730, 180, 30);
 
-        itemnameLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        itemnameLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         itemnameLabel.setText("Item Name:");
         jPanel1.add(itemnameLabel);
-        itemnameLabel.setBounds(250, 70, 90, 17);
+        itemnameLabel.setBounds(550, 200, 130, 50);
 
-        categoryLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        categoryLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         categoryLabel.setText("Category:");
         jPanel1.add(categoryLabel);
-        categoryLabel.setBounds(510, 70, 80, 17);
+        categoryLabel.setBounds(900, 200, 110, 40);
 
         itemnameTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(itemnameTextField);
-        itemnameTextField.setBounds(250, 100, 220, 23);
+        itemnameTextField.setBounds(550, 250, 220, 30);
 
         colorTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(colorTextField);
-        colorTextField.setBounds(250, 240, 480, 23);
+        colorTextField.setBounds(550, 410, 580, 30);
 
-        storeatLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        storeatLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         storeatLabel.setText("Store At:");
         jPanel1.add(storeatLabel);
-        storeatLabel.setBounds(250, 420, 100, 17);
+        storeatLabel.setBounds(550, 620, 120, 28);
 
         datefoundTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("yyyy-MM-dd"))));
+        datefoundTextField.setMaximumSize(new java.awt.Dimension(65, 25));
+        datefoundTextField.setMinimumSize(new java.awt.Dimension(65, 25));
         jPanel1.add(datefoundTextField);
-        datefoundTextField.setBounds(250, 380, 480, 22);
+        datefoundTextField.setBounds(550, 580, 580, 30);
 
-        datefoundLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        datefoundLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         datefoundLabel.setText("Date Found: ");
         jPanel1.add(datefoundLabel);
-        datefoundLabel.setBounds(250, 350, 100, 17);
+        datefoundLabel.setBounds(550, 540, 150, 28);
 
         storeatTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        storeatTextField.setPreferredSize(new java.awt.Dimension(65, 25));
         jPanel1.add(storeatTextField);
-        storeatTextField.setBounds(250, 450, 480, 23);
+        storeatTextField.setBounds(550, 660, 580, 30);
+
+        homeBtn.setBackground(new java.awt.Color(231, 85, 49));
+        homeBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        homeBtn.setForeground(new java.awt.Color(255, 255, 255));
+        homeBtn.setText("HOME");
+        homeBtn.addActionListener(this::homeBtnActionPerformed);
+        jPanel1.add(homeBtn);
+        homeBtn.setBounds(30, 170, 180, 30);
+
+        browseBtn.setBackground(new java.awt.Color(231, 85, 49));
+        browseBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        browseBtn.setForeground(new java.awt.Color(255, 255, 255));
+        browseBtn.setText("BROWSE");
+        browseBtn.addActionListener(this::browseBtnActionPerformed);
+        jPanel1.add(browseBtn);
+        browseBtn.setBounds(30, 240, 180, 30);
+
+        searchBtn.setBackground(new java.awt.Color(231, 85, 49));
+        searchBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        searchBtn.setForeground(new java.awt.Color(255, 255, 255));
+        searchBtn.setText("SEARCH");
+        searchBtn.setToolTipText("");
+        searchBtn.addActionListener(this::searchBtnActionPerformed);
+        jPanel1.add(searchBtn);
+        searchBtn.setBounds(30, 310, 180, 30);
+
+        userserviceBtn.setBackground(new java.awt.Color(231, 85, 49));
+        userserviceBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        userserviceBtn.setForeground(new java.awt.Color(255, 255, 255));
+        userserviceBtn.setText("USER SERVICE");
+        userserviceBtn.setToolTipText("");
+        userserviceBtn.setActionCommand("userService");
+        userserviceBtn.addActionListener(this::userserviceBtnActionPerformed);
+        jPanel1.add(userserviceBtn);
+        userserviceBtn.setBounds(30, 380, 180, 30);
+
+        logoutBtn.setBackground(new java.awt.Color(235, 233, 228));
+        logoutBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        logoutBtn.setText("LOGOUT");
+        logoutBtn.addActionListener(this::logoutBtnActionPerformed);
+        jPanel1.add(logoutBtn);
+        logoutBtn.setBounds(30, 740, 180, 30);
+
+        jLabel5.setFont(new java.awt.Font("STHupo", 1, 30)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(231, 85, 49));
+        jLabel5.setText("Lost&FoundU");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(30, 100, 190, 56);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/bluewhitebg.png"))); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 0, 240, 1080);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -215,13 +224,13 @@ public class ReportFoundItem extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 45, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -365,10 +374,10 @@ public class ReportFoundItem extends javax.swing.JFrame {
     private javax.swing.JButton homeBtn;
     private javax.swing.JLabel itemnameLabel;
     private javax.swing.JTextField itemnameTextField;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel locationfoundLabel;
     private javax.swing.JTextField locationfoundTextField;
     private javax.swing.JButton logoutBtn;
