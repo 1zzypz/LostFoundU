@@ -50,13 +50,6 @@ public class Dashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        homeBtn = new javax.swing.JButton();
-        browseBtn = new javax.swing.JButton();
-        searchBtn = new javax.swing.JButton();
-        userserviceBtn = new javax.swing.JButton();
-        logoutBtn = new javax.swing.JButton();
         quickactionLabel = new javax.swing.JLabel();
         reportlostitemBtn = new javax.swing.JButton();
         reportfounditemBtn = new javax.swing.JButton();
@@ -64,94 +57,51 @@ public class Dashboard extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         activityfeedTable = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        homeBtn = new javax.swing.JButton();
+        browseBtn = new javax.swing.JButton();
+        searchBtn = new javax.swing.JButton();
+        userserviceBtn = new javax.swing.JButton();
+        logoutBtn = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(235, 233, 228));
-        jPanel1.setPreferredSize(new java.awt.Dimension(800, 550));
+        jPanel1.setBackground(new java.awt.Color(242, 224, 139));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jPanel1.setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(244, 85, 0));
-        jPanel2.setForeground(new java.awt.Color(244, 85, 0));
-        jPanel2.setPreferredSize(new java.awt.Dimension(200, 550));
-        jPanel2.setLayout(null);
-
-        jLabel4.setFont(new java.awt.Font("Nirmala Text", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(235, 233, 228));
-        jLabel4.setText("Lost&FoundU");
-        jPanel2.add(jLabel4);
-        jLabel4.setBounds(20, 50, 170, 56);
-
-        homeBtn.setBackground(new java.awt.Color(235, 233, 228));
-        homeBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        homeBtn.setText("Home");
-        homeBtn.addActionListener(this::homeBtnActionPerformed);
-        jPanel2.add(homeBtn);
-        homeBtn.setBounds(10, 170, 180, 30);
-
-        browseBtn.setBackground(new java.awt.Color(235, 233, 228));
-        browseBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        browseBtn.setText("Browse");
-        browseBtn.addActionListener(this::browseBtnActionPerformed);
-        jPanel2.add(browseBtn);
-        browseBtn.setBounds(10, 220, 180, 30);
-
-        searchBtn.setBackground(new java.awt.Color(235, 233, 228));
-        searchBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        searchBtn.setText("Search");
-        searchBtn.setToolTipText("");
-        searchBtn.addActionListener(this::searchBtnActionPerformed);
-        jPanel2.add(searchBtn);
-        searchBtn.setBounds(10, 270, 180, 30);
-
-        userserviceBtn.setBackground(new java.awt.Color(235, 233, 228));
-        userserviceBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        userserviceBtn.setText("User Service");
-        userserviceBtn.setToolTipText("");
-        userserviceBtn.addActionListener(this::userserviceBtnActionPerformed);
-        jPanel2.add(userserviceBtn);
-        userserviceBtn.setBounds(10, 320, 180, 30);
-
-        logoutBtn.setBackground(new java.awt.Color(235, 233, 228));
-        logoutBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        logoutBtn.setText("Logout");
-        logoutBtn.addActionListener(this::logoutBtnActionPerformed);
-        jPanel2.add(logoutBtn);
-        logoutBtn.setBounds(10, 500, 180, 30);
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 200, 550);
-
-        quickactionLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        quickactionLabel.setFont(new java.awt.Font("Bell MT", 1, 48)); // NOI18N
         quickactionLabel.setText("Quick Action:");
         jPanel1.add(quickactionLabel);
-        quickactionLabel.setBounds(240, 100, 130, 22);
+        quickactionLabel.setBounds(320, 100, 310, 60);
 
         reportlostitemBtn.setBackground(new java.awt.Color(244, 85, 0));
         reportlostitemBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         reportlostitemBtn.setForeground(new java.awt.Color(235, 233, 228));
-        reportlostitemBtn.setText("Report Lost Item");
+        reportlostitemBtn.setText("REPORT LOST ITEM");
         reportlostitemBtn.addActionListener(this::reportlostitemBtnActionPerformed);
         jPanel1.add(reportlostitemBtn);
-        reportlostitemBtn.setBounds(240, 140, 150, 50);
+        reportlostitemBtn.setBounds(320, 180, 200, 50);
 
         reportfounditemBtn.setBackground(new java.awt.Color(244, 85, 0));
         reportfounditemBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         reportfounditemBtn.setForeground(new java.awt.Color(235, 233, 228));
-        reportfounditemBtn.setText("Report Found Item");
+        reportfounditemBtn.setText("REPORT FOUND ITEM");
         reportfounditemBtn.addActionListener(this::reportfounditemBtnActionPerformed);
         jPanel1.add(reportfounditemBtn);
-        reportfounditemBtn.setBounds(420, 140, 150, 50);
+        reportfounditemBtn.setBounds(600, 180, 200, 50);
 
         browsecatalogBtn.setBackground(new java.awt.Color(244, 85, 0));
         browsecatalogBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         browsecatalogBtn.setForeground(new java.awt.Color(235, 233, 228));
-        browsecatalogBtn.setText("Browse Catalog");
+        browsecatalogBtn.setText("BROWSE CATALOG");
         browsecatalogBtn.addActionListener(this::browsecatalogBtnActionPerformed);
         jPanel1.add(browsecatalogBtn);
-        browsecatalogBtn.setBounds(600, 140, 150, 50);
+        browsecatalogBtn.setBounds(870, 180, 200, 50);
 
+        activityfeedTable.setBackground(new java.awt.Color(243, 239, 228));
+        activityfeedTable.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         activityfeedTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -163,34 +113,78 @@ public class Dashboard extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        activityfeedTable.setRowHeight(25);
         jScrollPane1.setViewportView(activityfeedTable);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(240, 260, 520, 210);
+        jScrollPane1.setBounds(320, 360, 1530, 610);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Bell MT", 1, 48)); // NOI18N
         jLabel2.setText("Activity Feed:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(240, 220, 130, 22);
+        jLabel2.setBounds(320, 280, 310, 70);
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/logo.png"))); // NOI18N
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(350, 0, 300, 100);
+        jLabel4.setFont(new java.awt.Font("STHupo", 1, 30)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(231, 85, 49));
+        jLabel4.setText("Lost&FoundU");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(30, 100, 190, 56);
+
+        homeBtn.setBackground(new java.awt.Color(231, 85, 49));
+        homeBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        homeBtn.setForeground(new java.awt.Color(255, 255, 255));
+        homeBtn.setText("HOME");
+        homeBtn.addActionListener(this::homeBtnActionPerformed);
+        jPanel1.add(homeBtn);
+        homeBtn.setBounds(30, 170, 180, 30);
+
+        browseBtn.setBackground(new java.awt.Color(231, 85, 49));
+        browseBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        browseBtn.setForeground(new java.awt.Color(255, 255, 255));
+        browseBtn.setText("BROWSE");
+        browseBtn.addActionListener(this::browseBtnActionPerformed);
+        jPanel1.add(browseBtn);
+        browseBtn.setBounds(30, 240, 180, 30);
+
+        searchBtn.setBackground(new java.awt.Color(231, 85, 49));
+        searchBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        searchBtn.setForeground(new java.awt.Color(255, 255, 255));
+        searchBtn.setText("SEARCH");
+        searchBtn.setToolTipText("");
+        searchBtn.addActionListener(this::searchBtnActionPerformed);
+        jPanel1.add(searchBtn);
+        searchBtn.setBounds(30, 310, 180, 30);
+
+        userserviceBtn.setBackground(new java.awt.Color(231, 85, 49));
+        userserviceBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        userserviceBtn.setForeground(new java.awt.Color(255, 255, 255));
+        userserviceBtn.setText("USER SERVICE");
+        userserviceBtn.setToolTipText("");
+        userserviceBtn.addActionListener(this::userserviceBtnActionPerformed);
+        jPanel1.add(userserviceBtn);
+        userserviceBtn.setBounds(30, 380, 180, 30);
+
+        logoutBtn.setBackground(new java.awt.Color(243, 239, 228));
+        logoutBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        logoutBtn.setText("LOGOUT");
+        logoutBtn.addActionListener(this::logoutBtnActionPerformed);
+        jPanel1.add(logoutBtn);
+        logoutBtn.setBounds(30, 940, 180, 30);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/bluewhitebg.png"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(0, 0, 240, 1080);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 31, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 20, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -283,11 +277,10 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton browseBtn;
     private javax.swing.JButton browsecatalogBtn;
     private javax.swing.JButton homeBtn;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton logoutBtn;
     private javax.swing.JLabel quickactionLabel;
