@@ -68,7 +68,7 @@ public class ItemFound extends Item {
         //run method getStatus() inherited from parent class to check current state
         switch (getStatus()) {
             case STATUS_SUBMITTED:
-                return "Awaiting admin verification.";
+                return "Awaiting staff verification.";
             case STATUS_VERIFIED:
                 return "Verified and available for claims.";
             case STATUS_MATCHED:

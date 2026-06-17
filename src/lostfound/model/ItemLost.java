@@ -47,7 +47,7 @@ public class ItemLost extends Item {
     public String trackStatus() {
         switch (getStatus()) {
             case STATUS_PENDING:
-                return "Waiting for admin review.";
+                return "Waiting for staff review.";
             case STATUS_VERIFIED:
                 return "Active lost report.";
             case STATUS_MATCHED:

@@ -9,6 +9,8 @@ public class ClaimRequest {
     public static final String STATUS_APPROVED = "APPROVED";
     public static final String STATUS_REJECTED = "REJECTED";
 
+    //encapsulation. keeping data private and allowing access through controlled public methods.
+    //other classes cannot directly access or change these variables.
     private String claimID;
     private String userID;
     private String foundItemID;
