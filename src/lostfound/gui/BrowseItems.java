@@ -86,7 +86,7 @@ public class BrowseItems extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(231, 85, 49));
         jLabel4.setText("Lost&FoundU");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(30, 40, 180, 56);
+        jLabel4.setBounds(30, 100, 180, 56);
 
         homeBtn.setBackground(new java.awt.Color(231, 85, 49));
         homeBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -94,7 +94,7 @@ public class BrowseItems extends javax.swing.JFrame {
         homeBtn.setText("HOME");
         homeBtn.addActionListener(this::homeBtnActionPerformed);
         jPanel1.add(homeBtn);
-        homeBtn.setBounds(30, 140, 180, 30);
+        homeBtn.setBounds(30, 170, 180, 30);
 
         browseBtn.setBackground(new java.awt.Color(231, 85, 49));
         browseBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -102,7 +102,7 @@ public class BrowseItems extends javax.swing.JFrame {
         browseBtn.setText("BROWSE");
         browseBtn.addActionListener(this::browseBtnActionPerformed);
         jPanel1.add(browseBtn);
-        browseBtn.setBounds(30, 220, 180, 30);
+        browseBtn.setBounds(30, 240, 180, 30);
 
         searchBtn.setBackground(new java.awt.Color(231, 85, 49));
         searchBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -111,7 +111,7 @@ public class BrowseItems extends javax.swing.JFrame {
         searchBtn.setToolTipText("");
         searchBtn.addActionListener(this::searchBtnActionPerformed);
         jPanel1.add(searchBtn);
-        searchBtn.setBounds(30, 300, 180, 30);
+        searchBtn.setBounds(30, 310, 180, 30);
 
         userserviceBtn.setBackground(new java.awt.Color(231, 85, 49));
         userserviceBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
