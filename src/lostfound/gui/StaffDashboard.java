@@ -101,7 +101,7 @@ public class StaffDashboard extends javax.swing.JFrame {
         titleLabel.setFont(new java.awt.Font("Bell MT", 1, 48)); // NOI18N
         titleLabel.setText("Staff Dashboard - Claims");
         jPanel1.add(titleLabel);
-        titleLabel.setBounds(790, 80, 540, 80);
+        titleLabel.setBounds(790, 80, 670, 80);
 
         refreshBtn.setBackground(new java.awt.Color(231, 85, 49));
         refreshBtn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
