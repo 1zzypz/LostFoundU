@@ -11,7 +11,7 @@ import lostfound.db.DBConnection;
 import lostfound.da.UserDA;
 /**
  *
- * @author danis
+ * @author izzati
  */
 public class ForgotPassword extends javax.swing.JFrame {
     
@@ -38,8 +38,6 @@ public class ForgotPassword extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         emailLabel = new javax.swing.JLabel();
         emailTextField = new javax.swing.JTextField();
         newpassTextField = new javax.swing.JPasswordField();
@@ -48,54 +46,45 @@ public class ForgotPassword extends javax.swing.JFrame {
         confirmpassLabel = new javax.swing.JLabel();
         changepassBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(235, 233, 228));
-        jPanel1.setPreferredSize(new java.awt.Dimension(800, 550));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jPanel1.setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(244, 85, 0));
-        jPanel2.setPreferredSize(new java.awt.Dimension(270, 550));
-        jPanel2.setLayout(null);
-
-        jLabel1.setBackground(new java.awt.Color(235, 233, 228));
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(235, 233, 228));
-        jLabel1.setText("Forgot Password");
-        jPanel2.add(jLabel1);
-        jLabel1.setBounds(40, 260, 200, 28);
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 270, 550);
-
-        emailLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        emailLabel.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
         emailLabel.setText("Email:");
         jPanel1.add(emailLabel);
-        emailLabel.setBounds(330, 170, 50, 17);
+        emailLabel.setBounds(1010, 420, 50, 21);
 
         emailTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        emailTextField.addActionListener(this::emailTextFieldActionPerformed);
         jPanel1.add(emailTextField);
-        emailTextField.setBounds(330, 200, 410, 23);
+        emailTextField.setBounds(1010, 450, 410, 23);
 
         newpassTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(newpassTextField);
-        newpassTextField.setBounds(330, 270, 410, 23);
+        newpassTextField.setBounds(1010, 520, 410, 23);
 
         confirmpassTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(confirmpassTextField);
-        confirmpassTextField.setBounds(330, 340, 410, 22);
+        confirmpassTextField.setBounds(1010, 590, 410, 22);
 
         newpassLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         newpassLabel.setText("New Password:");
         jPanel1.add(newpassLabel);
-        newpassLabel.setBounds(330, 240, 130, 17);
+        newpassLabel.setBounds(1010, 490, 130, 17);
 
         confirmpassLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         confirmpassLabel.setText("Confirm Password:");
         jPanel1.add(confirmpassLabel);
-        confirmpassLabel.setBounds(330, 310, 140, 17);
+        confirmpassLabel.setBounds(1010, 560, 140, 17);
 
         changepassBtn.setBackground(new java.awt.Color(244, 85, 0));
         changepassBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -103,7 +92,7 @@ public class ForgotPassword extends javax.swing.JFrame {
         changepassBtn.setText("Change password");
         changepassBtn.addActionListener(this::changepassBtnActionPerformed);
         jPanel1.add(changepassBtn);
-        changepassBtn.setBounds(330, 390, 410, 30);
+        changepassBtn.setBounds(1010, 630, 410, 30);
 
         jLabel2.setText("<html><font color=\"blue\"><u>Back to login</u></font></html>");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -112,12 +101,34 @@ public class ForgotPassword extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(500, 430, 80, 16);
+        jLabel2.setBounds(1340, 670, 80, 16);
+
+        jLabel1.setBackground(new java.awt.Color(235, 233, 228));
+        jLabel1.setFont(new java.awt.Font("STHupo", 1, 60)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(231, 85, 49));
+        jLabel1.setText("lost&foundU");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(190, 470, 350, 54);
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/bgpic.jpg"))); // NOI18N
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(0, 0, 730, 1080);
+
+        jLabel6.setBackground(new java.awt.Color(235, 233, 228));
+        jLabel6.setFont(new java.awt.Font("Bell MT", 1, 48)); // NOI18N
+        jLabel6.setText("Forgot Password");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(1010, 330, 410, 54);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/logostampp.png"))); // NOI18N
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(1560, 100, 250, 250);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/logo.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/bluewhitebg.png"))); // NOI18N
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(360, 20, 360, 140);
+        jLabel3.setBounds(710, 0, 1190, 1080);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,13 +136,13 @@ public class ForgotPassword extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 31, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 33, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -187,6 +198,10 @@ public class ForgotPassword extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
 
+    private void emailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailTextFieldActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -221,8 +236,10 @@ public class ForgotPassword extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel newpassLabel;
     private javax.swing.JPasswordField newpassTextField;
     // End of variables declaration//GEN-END:variables
