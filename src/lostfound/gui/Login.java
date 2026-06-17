@@ -124,7 +124,7 @@ public class Login extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Bell MT", 1, 48)); // NOI18N
         jLabel6.setText("Login");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(1010, 330, 159, 54);
+        jLabel6.setBounds(1010, 330, 159, 60);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/logostampp.png"))); // NOI18N
         jPanel1.add(jLabel8);
