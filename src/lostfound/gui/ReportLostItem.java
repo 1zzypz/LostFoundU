@@ -78,62 +78,62 @@ public class ReportLostItem extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Bell MT", 1, 48)); // NOI18N
         jLabel4.setText("File a New Lost Item Report");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(520, 120, 650, 40);
+        jLabel4.setBounds(540, 150, 610, 40);
 
-        itemnameLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        itemnameLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         itemnameLabel.setText("Item Name:");
         jPanel1.add(itemnameLabel);
-        itemnameLabel.setBounds(430, 190, 90, 17);
+        itemnameLabel.setBounds(560, 230, 130, 40);
 
         itemnameTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(itemnameTextField);
-        itemnameTextField.setBounds(440, 230, 220, 23);
+        itemnameTextField.setBounds(560, 270, 220, 30);
 
-        descriptionLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        descriptionLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         descriptionLabel.setText("Description:");
         jPanel1.add(descriptionLabel);
-        descriptionLabel.setBounds(480, 270, 100, 17);
+        descriptionLabel.setBounds(560, 320, 130, 30);
 
         descriptionTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(descriptionTextField);
-        descriptionTextField.setBounds(560, 310, 480, 30);
+        descriptionTextField.setBounds(560, 360, 580, 30);
 
-        categoryLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        categoryLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         categoryLabel.setText("Category:");
         jPanel1.add(categoryLabel);
-        categoryLabel.setBounds(790, 200, 80, 17);
+        categoryLabel.setBounds(900, 230, 120, 30);
 
         categoryDropDown.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         categoryDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(categoryDropDown);
-        categoryDropDown.setBounds(800, 240, 220, 23);
+        categoryDropDown.setBounds(900, 270, 220, 30);
 
-        colorLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        colorLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         colorLabel.setText("Color:");
         jPanel1.add(colorLabel);
-        colorLabel.setBounds(550, 350, 70, 17);
+        colorLabel.setBounds(560, 400, 70, 30);
 
         colorTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(colorTextField);
-        colorTextField.setBounds(560, 390, 480, 23);
+        colorTextField.setBounds(560, 440, 580, 30);
 
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel7.setText("Last Seen Location:");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(540, 430, 150, 16);
+        jLabel7.setBounds(560, 480, 220, 40);
 
         lastseenTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(lastseenTextField);
-        lastseenTextField.setBounds(590, 480, 480, 23);
+        lastseenTextField.setBounds(560, 530, 580, 30);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setText("Date Lost:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(610, 550, 80, 17);
+        jLabel1.setBounds(560, 570, 120, 30);
 
         datelostTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("yyyy-MM-dd"))));
         jPanel1.add(datelostTextField);
-        datelostTextField.setBounds(630, 610, 480, 22);
+        datelostTextField.setBounds(560, 610, 580, 30);
 
         jLabel5.setFont(new java.awt.Font("STHupo", 1, 30)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(231, 85, 49));
@@ -272,9 +272,8 @@ public class ReportLostItem extends javax.swing.JFrame {
         String name = itemnameTextField.getText().trim();
         String description = descriptionTextField.getText().trim();
         String color = colorTextField.getText().trim();
-        String locationFound = locationfoundTextField.getText().trim();
-        String dateFoundStr = datefoundTextField.getText().trim();
-        String storeAt = storeatTextField.getText().trim();
+        String locationLost = lastseenTextField.getText().trim();
+        String dateLostStr = datelostTextField.getText().trim();
 
         String selectedCategoryStr = (String) categoryDropDown.getSelectedItem();
         Category selectedCategory = Category.OTHERS;
@@ -285,13 +284,13 @@ public class ReportLostItem extends javax.swing.JFrame {
             }
         }
 
-        if(name.isEmpty() || locationFound.isEmpty() || dateFoundStr.isEmpty()){
-            JOptionPane.showMessageDialog(this, "Item Name, Location Found, and Date Found cannot be empty.", "Validation Error", JOptionPane.WARNING_MESSAGE);
+        if(name.isEmpty() || locationLost.isEmpty() || dateLostStr.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Item Name, Last Seen Location, and Date Lost cannot be empty.", "Validation Error", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         try {
-            LocalDate dateFound = LocalDate.parse(dateFoundStr);
+            LocalDate dateLost = LocalDate.parse(dateLostStr);
             String reporterID = SessionManager.getInstance().getAccountID();
             if (reporterID == null) {
                 JOptionPane.showMessageDialog(this, "Please log in before reporting an item.", "Session Error", JOptionPane.ERROR_MESSAGE);
@@ -301,13 +300,13 @@ public class ReportLostItem extends javax.swing.JFrame {
                 return;
             }
 
-            Item foundItem = ItemFactory.createItem("FOUND", name, description, selectedCategory, color, locationFound, dateFound, storeAt, reporterID);
+            Item lostItem = ItemFactory.createItem("LOST", name, description, selectedCategory, color, locationLost, dateLost, null, reporterID);
 
             ItemDA dbAccess = new ItemDA();
-            boolean success = dbAccess.insertFoundItem((ItemFound) foundItem);
+            boolean success = dbAccess.insertLostItem((ItemLost) lostItem);
 
             if(success){
-                JOptionPane.showMessageDialog(this, "Found Item report submitted successfully for verification!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Lost Item report submitted successfully for verification!", "Success", JOptionPane.INFORMATION_MESSAGE);
 
                 Dashboard dashboard = new Dashboard();
                 dashboard.setVisible(true);
