@@ -80,34 +80,34 @@ public class ReportFoundItem extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Bell MT", 1, 48)); // NOI18N
         jLabel3.setText("File a New Found Item Report");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(520, 120, 650, 40);
+        jLabel3.setBounds(740, 90, 650, 40);
 
         categoryDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(categoryDropDown);
-        categoryDropDown.setBounds(900, 250, 220, 30);
+        categoryDropDown.setBounds(1110, 250, 220, 30);
 
         descriptionLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         descriptionLabel.setText("Description:");
         jPanel1.add(descriptionLabel);
-        descriptionLabel.setBounds(550, 290, 140, 40);
+        descriptionLabel.setBounds(760, 290, 140, 40);
 
         descriptionTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(descriptionTextField);
-        descriptionTextField.setBounds(550, 330, 580, 30);
+        descriptionTextField.setBounds(760, 330, 580, 30);
 
         colorLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         colorLabel.setText("Color:");
         jPanel1.add(colorLabel);
-        colorLabel.setBounds(550, 370, 70, 30);
+        colorLabel.setBounds(760, 370, 70, 30);
 
         locationfoundTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(locationfoundTextField);
-        locationfoundTextField.setBounds(550, 490, 580, 30);
+        locationfoundTextField.setBounds(760, 480, 580, 30);
 
         locationfoundLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         locationfoundLabel.setText("Location Found:");
         jPanel1.add(locationfoundLabel);
-        locationfoundLabel.setBounds(550, 450, 180, 28);
+        locationfoundLabel.setBounds(760, 450, 180, 28);
 
         backBtn.setBackground(new java.awt.Color(231, 85, 49));
         backBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -115,7 +115,7 @@ public class ReportFoundItem extends javax.swing.JFrame {
         backBtn.setText("BACK");
         backBtn.addActionListener(this::backBtnActionPerformed);
         jPanel1.add(backBtn);
-        backBtn.setBounds(360, 740, 180, 30);
+        backBtn.setBounds(490, 800, 180, 30);
 
         submitBtn.setBackground(new java.awt.Color(231, 85, 49));
         submitBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -125,46 +125,46 @@ public class ReportFoundItem extends javax.swing.JFrame {
         submitBtn.setMinimumSize(new java.awt.Dimension(136, 24));
         submitBtn.addActionListener(this::submitBtnActionPerformed);
         jPanel1.add(submitBtn);
-        submitBtn.setBounds(1150, 730, 180, 30);
+        submitBtn.setBounds(1470, 800, 180, 30);
 
         itemnameLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         itemnameLabel.setText("Item Name:");
         jPanel1.add(itemnameLabel);
-        itemnameLabel.setBounds(550, 200, 130, 50);
+        itemnameLabel.setBounds(760, 200, 130, 50);
 
         categoryLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         categoryLabel.setText("Category:");
         jPanel1.add(categoryLabel);
-        categoryLabel.setBounds(900, 200, 110, 40);
+        categoryLabel.setBounds(1110, 210, 110, 40);
 
         itemnameTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(itemnameTextField);
-        itemnameTextField.setBounds(550, 250, 220, 30);
+        itemnameTextField.setBounds(760, 250, 220, 30);
 
         colorTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(colorTextField);
-        colorTextField.setBounds(550, 410, 580, 30);
+        colorTextField.setBounds(760, 400, 580, 30);
 
         storeatLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         storeatLabel.setText("Store At:");
         jPanel1.add(storeatLabel);
-        storeatLabel.setBounds(550, 620, 120, 28);
+        storeatLabel.setBounds(760, 600, 120, 28);
 
         datefoundTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("yyyy-MM-dd"))));
         datefoundTextField.setMaximumSize(new java.awt.Dimension(65, 25));
         datefoundTextField.setMinimumSize(new java.awt.Dimension(65, 25));
         jPanel1.add(datefoundTextField);
-        datefoundTextField.setBounds(550, 580, 580, 30);
+        datefoundTextField.setBounds(760, 550, 580, 30);
 
         datefoundLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         datefoundLabel.setText("Date Found: ");
         jPanel1.add(datefoundLabel);
-        datefoundLabel.setBounds(550, 540, 150, 28);
+        datefoundLabel.setBounds(760, 520, 150, 28);
 
         storeatTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         storeatTextField.setPreferredSize(new java.awt.Dimension(65, 25));
         jPanel1.add(storeatTextField);
-        storeatTextField.setBounds(550, 660, 580, 30);
+        storeatTextField.setBounds(760, 630, 580, 30);
 
         homeBtn.setBackground(new java.awt.Color(231, 85, 49));
         homeBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -206,7 +206,7 @@ public class ReportFoundItem extends javax.swing.JFrame {
         logoutBtn.setText("LOGOUT");
         logoutBtn.addActionListener(this::logoutBtnActionPerformed);
         jPanel1.add(logoutBtn);
-        logoutBtn.setBounds(30, 740, 180, 30);
+        logoutBtn.setBounds(30, 950, 180, 30);
 
         jLabel5.setFont(new java.awt.Font("STHupo", 1, 30)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(231, 85, 49));

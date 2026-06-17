@@ -78,62 +78,62 @@ public class ReportLostItem extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Bell MT", 1, 48)); // NOI18N
         jLabel4.setText("File a New Lost Item Report");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(540, 150, 610, 40);
+        jLabel4.setBounds(750, 120, 610, 40);
 
         itemnameLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         itemnameLabel.setText("Item Name:");
         jPanel1.add(itemnameLabel);
-        itemnameLabel.setBounds(560, 230, 130, 40);
+        itemnameLabel.setBounds(760, 230, 130, 40);
 
         itemnameTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(itemnameTextField);
-        itemnameTextField.setBounds(560, 270, 220, 30);
+        itemnameTextField.setBounds(760, 280, 220, 30);
 
         descriptionLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         descriptionLabel.setText("Description:");
         jPanel1.add(descriptionLabel);
-        descriptionLabel.setBounds(560, 320, 130, 30);
+        descriptionLabel.setBounds(760, 330, 130, 30);
 
         descriptionTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(descriptionTextField);
-        descriptionTextField.setBounds(560, 360, 580, 30);
+        descriptionTextField.setBounds(760, 360, 580, 30);
 
         categoryLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         categoryLabel.setText("Category:");
         jPanel1.add(categoryLabel);
-        categoryLabel.setBounds(900, 230, 120, 30);
+        categoryLabel.setBounds(1120, 240, 120, 30);
 
         categoryDropDown.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         categoryDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(categoryDropDown);
-        categoryDropDown.setBounds(900, 270, 220, 30);
+        categoryDropDown.setBounds(1120, 280, 220, 30);
 
         colorLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         colorLabel.setText("Color:");
         jPanel1.add(colorLabel);
-        colorLabel.setBounds(560, 400, 70, 30);
+        colorLabel.setBounds(760, 410, 70, 30);
 
         colorTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(colorTextField);
-        colorTextField.setBounds(560, 440, 580, 30);
+        colorTextField.setBounds(760, 440, 580, 30);
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel7.setText("Last Seen Location:");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(560, 480, 220, 40);
+        jLabel7.setBounds(760, 490, 220, 40);
 
         lastseenTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(lastseenTextField);
-        lastseenTextField.setBounds(560, 530, 580, 30);
+        lastseenTextField.setBounds(760, 530, 580, 30);
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setText("Date Lost:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(560, 570, 120, 30);
+        jLabel1.setBounds(760, 590, 120, 30);
 
         datelostTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("yyyy-MM-dd"))));
         jPanel1.add(datelostTextField);
-        datelostTextField.setBounds(560, 610, 580, 30);
+        datelostTextField.setBounds(760, 620, 580, 30);
 
         jLabel5.setFont(new java.awt.Font("STHupo", 1, 30)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(231, 85, 49));
@@ -181,7 +181,7 @@ public class ReportLostItem extends javax.swing.JFrame {
         logoutBtn1.setText("LOGOUT");
         logoutBtn1.addActionListener(this::logoutBtn1ActionPerformed);
         jPanel1.add(logoutBtn1);
-        logoutBtn1.setBounds(30, 740, 180, 30);
+        logoutBtn1.setBounds(30, 950, 180, 30);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/bluewhitebg.png"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -194,7 +194,7 @@ public class ReportLostItem extends javax.swing.JFrame {
         backBtn1.setText("BACK");
         backBtn1.addActionListener(this::backBtn1ActionPerformed);
         jPanel1.add(backBtn1);
-        backBtn1.setBounds(360, 740, 180, 30);
+        backBtn1.setBounds(560, 750, 180, 30);
 
         submitBtn1.setBackground(new java.awt.Color(231, 85, 49));
         submitBtn1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -204,7 +204,7 @@ public class ReportLostItem extends javax.swing.JFrame {
         submitBtn1.setMinimumSize(new java.awt.Dimension(136, 24));
         submitBtn1.addActionListener(this::submitBtn1ActionPerformed);
         jPanel1.add(submitBtn1);
-        submitBtn1.setBounds(1150, 730, 180, 30);
+        submitBtn1.setBounds(1430, 750, 180, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
