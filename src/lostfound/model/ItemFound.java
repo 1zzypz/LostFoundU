@@ -2,17 +2,22 @@ package lostfound.model;
 
 import java.time.LocalDate;
 
+//Inheritance: ItemFound inherits attributes and methods from the superclass Item
 public class ItemFound extends Item {
 
+    //Encapsulation: private variables to hide data
     private String locationFound;
     private LocalDate dateFound;
     private String storeAt;
     private String submitterID;
 
+    //Constructor to initialize new ItemFound obj
     public ItemFound(String itemName, String description, Category category,
             String color, String locationFound, LocalDate dateFound,
             String storeAt, String submitterID) {
+        //call to superclass (Item) constructor to initialize inherited attributes
         super(itemName, description, category, color, Item.STATUS_SUBMITTED);
+        
         this.locationFound = locationFound;
         this.dateFound = dateFound;
         this.storeAt = storeAt;
@@ -36,13 +41,16 @@ public class ItemFound extends Item {
     }
 
     public void setLocationFound(String locationFound) {
+        
+        //validation to ensure field is not null or empty before setting
         if (locationFound == null || locationFound.trim().isEmpty()) {
             throw new IllegalArgumentException("Location found cannot be empty.");
         }
-        this.locationFound = locationFound.trim();
+        this.locationFound = locationFound.trim(); //remove leading/trailing spaces
     }
 
     public void setDateFound(LocalDate dateFound) {
+        //validation to ensure the date is provided and isn't set in the future
         if (dateFound == null || dateFound.isAfter(LocalDate.now())) {
             throw new IllegalArgumentException("Date found cannot be in the future.");
         }
@@ -50,11 +58,14 @@ public class ItemFound extends Item {
     }
 
     public void setStoreAt(String storeAt) {
+        //if storeAt is not null, trim it; otherwise, assign an empty string
         this.storeAt = (storeAt != null) ? storeAt.trim() : "";
     }
 
+    //Polymorhism: Overriding the trackStatus method defined in the parent class Item
     @Override
     public String trackStatus() {
+        //run method getStatus() inherited from parent class to check current state
         switch (getStatus()) {
             case STATUS_SUBMITTED:
                 return "Awaiting staff verification.";
@@ -71,8 +82,10 @@ public class ItemFound extends Item {
         }
     }
 
+    //Polymorphism: Overriding the getStatusSummary method from parent class Item
     @Override
     public String getStatusSummary() {
+        //calling inherited getter methods (getItemID, getItemName, getStatus) to build the string
         return getItemID() + " | " + getItemName()
                 + " | Found: " + locationFound
                 + " | Date: " + dateFound

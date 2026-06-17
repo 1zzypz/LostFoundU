@@ -45,15 +45,7 @@ public class ReportLostItem extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        homeBtn = new javax.swing.JButton();
-        browseBtn = new javax.swing.JButton();
-        searchBtn = new javax.swing.JButton();
-        userserviceBtn = new javax.swing.JButton();
-        logoutBtn = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        backBtn = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         itemnameLabel = new javax.swing.JLabel();
         itemnameTextField = new javax.swing.JTextField();
         descriptionLabel = new javax.swing.JLabel();
@@ -66,139 +58,153 @@ public class ReportLostItem extends javax.swing.JFrame {
         lastseenTextField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         datelostTextField = new javax.swing.JFormattedTextField();
-        submitBtn = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        homeBtn1 = new javax.swing.JButton();
+        browseBtn1 = new javax.swing.JButton();
+        searchBtn1 = new javax.swing.JButton();
+        userserviceBtn1 = new javax.swing.JButton();
+        logoutBtn1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        backBtn1 = new javax.swing.JButton();
+        submitBtn1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1920, 1080));
 
-        jPanel1.setBackground(new java.awt.Color(235, 233, 228));
-        jPanel1.setPreferredSize(new java.awt.Dimension(800, 550));
+        jPanel1.setBackground(new java.awt.Color(242, 224, 139));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jPanel1.setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(244, 85, 0));
-        jPanel2.setPreferredSize(new java.awt.Dimension(200, 550));
-        jPanel2.setLayout(null);
+        jLabel4.setFont(new java.awt.Font("Bell MT", 1, 48)); // NOI18N
+        jLabel4.setText("File a New Lost Item Report");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(750, 120, 610, 40);
 
-        jLabel5.setFont(new java.awt.Font("Nirmala Text", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(235, 233, 228));
-        jLabel5.setText("Lost&FoundU");
-        jPanel2.add(jLabel5);
-        jLabel5.setBounds(20, 50, 170, 56);
-
-        homeBtn.setBackground(new java.awt.Color(235, 233, 228));
-        homeBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        homeBtn.setText("Home");
-        homeBtn.addActionListener(this::homeBtnActionPerformed);
-        jPanel2.add(homeBtn);
-        homeBtn.setBounds(10, 170, 180, 30);
-
-        browseBtn.setBackground(new java.awt.Color(235, 233, 228));
-        browseBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        browseBtn.setText("Browse");
-        browseBtn.addActionListener(this::browseBtnActionPerformed);
-        jPanel2.add(browseBtn);
-        browseBtn.setBounds(10, 220, 180, 30);
-
-        searchBtn.setBackground(new java.awt.Color(235, 233, 228));
-        searchBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        searchBtn.setText("Search");
-        searchBtn.setToolTipText("");
-        searchBtn.addActionListener(this::searchBtnActionPerformed);
-        jPanel2.add(searchBtn);
-        searchBtn.setBounds(10, 270, 180, 30);
-
-        userserviceBtn.setBackground(new java.awt.Color(235, 233, 228));
-        userserviceBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        userserviceBtn.setText("User Service");
-        userserviceBtn.setToolTipText("");
-        userserviceBtn.addActionListener(this::userserviceBtnActionPerformed);
-        jPanel2.add(userserviceBtn);
-        userserviceBtn.setBounds(10, 320, 180, 30);
-
-        logoutBtn.setBackground(new java.awt.Color(235, 233, 228));
-        logoutBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        logoutBtn.setText("Logout");
-        logoutBtn.addActionListener(this::logoutBtnActionPerformed);
-        jPanel2.add(logoutBtn);
-        logoutBtn.setBounds(10, 500, 180, 30);
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 200, 550);
-
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel3.setText("File a New Lost Item Report");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(230, 50, 250, 22);
-
-        backBtn.setBackground(new java.awt.Color(244, 85, 0));
-        backBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        backBtn.setForeground(new java.awt.Color(235, 233, 228));
-        backBtn.setText("Back");
-        backBtn.addActionListener(this::backBtnActionPerformed);
-        jPanel1.add(backBtn);
-        backBtn.setBounds(250, 490, 120, 30);
-
-        itemnameLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        itemnameLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         itemnameLabel.setText("Item Name:");
         jPanel1.add(itemnameLabel);
-        itemnameLabel.setBounds(250, 100, 90, 17);
+        itemnameLabel.setBounds(760, 230, 130, 40);
 
         itemnameTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(itemnameTextField);
-        itemnameTextField.setBounds(250, 130, 220, 23);
+        itemnameTextField.setBounds(760, 280, 220, 30);
 
-        descriptionLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        descriptionLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         descriptionLabel.setText("Description:");
         jPanel1.add(descriptionLabel);
-        descriptionLabel.setBounds(250, 170, 100, 17);
+        descriptionLabel.setBounds(760, 330, 130, 30);
 
         descriptionTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(descriptionTextField);
-        descriptionTextField.setBounds(250, 200, 480, 30);
+        descriptionTextField.setBounds(760, 360, 580, 30);
 
-        categoryLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        categoryLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         categoryLabel.setText("Category:");
         jPanel1.add(categoryLabel);
-        categoryLabel.setBounds(510, 100, 80, 17);
+        categoryLabel.setBounds(1120, 240, 120, 30);
 
         categoryDropDown.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         categoryDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(categoryDropDown);
-        categoryDropDown.setBounds(510, 130, 220, 23);
+        categoryDropDown.setBounds(1120, 280, 220, 30);
 
-        colorLabel.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        colorLabel.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         colorLabel.setText("Color:");
         jPanel1.add(colorLabel);
-        colorLabel.setBounds(250, 250, 70, 17);
+        colorLabel.setBounds(760, 410, 70, 30);
 
         colorTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(colorTextField);
-        colorTextField.setBounds(250, 280, 480, 23);
+        colorTextField.setBounds(760, 440, 580, 30);
 
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel7.setText("Last Seen Location:");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(250, 320, 150, 16);
+        jLabel7.setBounds(760, 490, 220, 40);
 
         lastseenTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPanel1.add(lastseenTextField);
-        lastseenTextField.setBounds(250, 350, 480, 23);
+        lastseenTextField.setBounds(760, 530, 580, 30);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setText("Date Lost:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(250, 390, 80, 17);
+        jLabel1.setBounds(760, 590, 120, 30);
 
         datelostTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("yyyy-MM-dd"))));
         jPanel1.add(datelostTextField);
-        datelostTextField.setBounds(250, 420, 480, 22);
+        datelostTextField.setBounds(760, 620, 580, 30);
 
-        submitBtn.setBackground(new java.awt.Color(244, 85, 0));
-        submitBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        submitBtn.setForeground(new java.awt.Color(235, 233, 228));
-        submitBtn.setText("Submit");
-        submitBtn.addActionListener(this::submitBtnActionPerformed);
-        jPanel1.add(submitBtn);
-        submitBtn.setBounds(610, 490, 120, 30);
+        jLabel5.setFont(new java.awt.Font("STHupo", 1, 30)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(231, 85, 49));
+        jLabel5.setText("Lost&FoundU");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(30, 100, 190, 56);
+
+        homeBtn1.setBackground(new java.awt.Color(231, 85, 49));
+        homeBtn1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        homeBtn1.setForeground(new java.awt.Color(255, 255, 255));
+        homeBtn1.setText("HOME");
+        homeBtn1.addActionListener(this::homeBtn1ActionPerformed);
+        jPanel1.add(homeBtn1);
+        homeBtn1.setBounds(30, 170, 180, 30);
+
+        browseBtn1.setBackground(new java.awt.Color(231, 85, 49));
+        browseBtn1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        browseBtn1.setForeground(new java.awt.Color(255, 255, 255));
+        browseBtn1.setText("BROWSE");
+        browseBtn1.addActionListener(this::browseBtn1ActionPerformed);
+        jPanel1.add(browseBtn1);
+        browseBtn1.setBounds(30, 240, 180, 30);
+
+        searchBtn1.setBackground(new java.awt.Color(231, 85, 49));
+        searchBtn1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        searchBtn1.setForeground(new java.awt.Color(255, 255, 255));
+        searchBtn1.setText("SEARCH");
+        searchBtn1.setToolTipText("");
+        searchBtn1.addActionListener(this::searchBtn1ActionPerformed);
+        jPanel1.add(searchBtn1);
+        searchBtn1.setBounds(30, 310, 180, 30);
+
+        userserviceBtn1.setBackground(new java.awt.Color(231, 85, 49));
+        userserviceBtn1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        userserviceBtn1.setForeground(new java.awt.Color(255, 255, 255));
+        userserviceBtn1.setText("USER SERVICE");
+        userserviceBtn1.setToolTipText("");
+        userserviceBtn1.setActionCommand("userService");
+        userserviceBtn1.addActionListener(this::userserviceBtn1ActionPerformed);
+        jPanel1.add(userserviceBtn1);
+        userserviceBtn1.setBounds(30, 380, 180, 30);
+
+        logoutBtn1.setBackground(new java.awt.Color(235, 233, 228));
+        logoutBtn1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        logoutBtn1.setText("LOGOUT");
+        logoutBtn1.addActionListener(this::logoutBtn1ActionPerformed);
+        jPanel1.add(logoutBtn1);
+        logoutBtn1.setBounds(30, 950, 180, 30);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lostfound/gambar/bluewhitebg.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(0, 0, 240, 1080);
+
+        backBtn1.setBackground(new java.awt.Color(231, 85, 49));
+        backBtn1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        backBtn1.setForeground(new java.awt.Color(235, 233, 228));
+        backBtn1.setText("BACK");
+        backBtn1.addActionListener(this::backBtn1ActionPerformed);
+        jPanel1.add(backBtn1);
+        backBtn1.setBounds(560, 750, 180, 30);
+
+        submitBtn1.setBackground(new java.awt.Color(231, 85, 49));
+        submitBtn1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        submitBtn1.setForeground(new java.awt.Color(235, 233, 228));
+        submitBtn1.setText("SUBMIT");
+        submitBtn1.setMaximumSize(new java.awt.Dimension(136, 24));
+        submitBtn1.setMinimumSize(new java.awt.Dimension(136, 24));
+        submitBtn1.addActionListener(this::submitBtn1ActionPerformed);
+        jPanel1.add(submitBtn1);
+        submitBtn1.setBounds(1430, 750, 180, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -206,113 +212,115 @@ public class ReportLostItem extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 17, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 17, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void homeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeBtnActionPerformed
+    private void homeBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeBtn1ActionPerformed
         // TODO add your handling code here:
         Dashboard home = new Dashboard();
         home.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_homeBtnActionPerformed
+    }//GEN-LAST:event_homeBtn1ActionPerformed
 
-    private void browseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseBtnActionPerformed
+    private void browseBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseBtn1ActionPerformed
         // TODO add your handling code here:
         BrowseItems browse = new BrowseItems();
         browse.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_browseBtnActionPerformed
+    }//GEN-LAST:event_browseBtn1ActionPerformed
 
-    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
+    private void searchBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtn1ActionPerformed
         // TODO add your handling code here:
         SearchItems search = new SearchItems();
         search.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_searchBtnActionPerformed
+    }//GEN-LAST:event_searchBtn1ActionPerformed
 
-    private void userserviceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userserviceBtnActionPerformed
+    private void userserviceBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userserviceBtn1ActionPerformed
         // TODO add your handling code here:
         UserService userService = new UserService();
         userService.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_userserviceBtnActionPerformed
+    }//GEN-LAST:event_userserviceBtn1ActionPerformed
 
-    private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
+    private void logoutBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtn1ActionPerformed
         // TODO add your handling code here:
         SessionManager.getInstance().logout();
         Login login = new Login();
         login.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_logoutBtnActionPerformed
+    }//GEN-LAST:event_logoutBtn1ActionPerformed
 
-    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+    private void backBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtn1ActionPerformed
         // TODO add your handling code here:
         UserService userService = new UserService();
         userService.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_backBtnActionPerformed
+    }//GEN-LAST:event_backBtn1ActionPerformed
 
-    private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
+    private void submitBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtn1ActionPerformed
         // TODO add your handling code here:
         String name = itemnameTextField.getText().trim();
         String description = descriptionTextField.getText().trim();
         String color = colorTextField.getText().trim();
         String locationLost = lastseenTextField.getText().trim();
-        String dateLost = datelostTextField.getText().trim();
-        
+        String dateLostStr = datelostTextField.getText().trim();
+
         String selectedCategoryStr = (String) categoryDropDown.getSelectedItem();
         Category selectedCategory = Category.OTHERS;
-        
         for(Category cat : Category.values()){
-            if(cat.toString().equals(selectedCategoryStr)){
+            if(cat.name().equals(selectedCategoryStr)){
                 selectedCategory = cat;
                 break;
             }
         }
-        
-        if(name.isEmpty() || locationLost.isEmpty() || dateLost.isEmpty()){
-            JOptionPane.showMessageDialog(this, "Item name, Last Seen Location, and Date Lost cannot be empty.", "Validation Error", JOptionPane.WARNING_MESSAGE);
+
+        if(name.isEmpty() || locationLost.isEmpty() || dateLostStr.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Item Name, Last Seen Location, and Date Lost cannot be empty.", "Validation Error", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        
+
         try {
-            LocalDate dateLost2 = LocalDate.parse(dateLost);
-            String activeReporterID = SessionManager.getInstance().getAccountID();
-            if (activeReporterID == null) {
+            LocalDate dateLost = LocalDate.parse(dateLostStr);
+            String reporterID = SessionManager.getInstance().getAccountID();
+            if (reporterID == null) {
                 JOptionPane.showMessageDialog(this, "Please log in before reporting an item.", "Session Error", JOptionPane.ERROR_MESSAGE);
                 Login login = new Login();
                 login.setVisible(true);
                 this.dispose();
                 return;
             }
-            Item lostItem = ItemFactory.createItem("LOST", name, description, selectedCategory, color, locationLost, dateLost2, null, activeReporterID);
-            
+
+            Item lostItem = ItemFactory.createItem("LOST", name, description, selectedCategory, color, locationLost, dateLost, null, reporterID);
+
             ItemDA dbAccess = new ItemDA();
-            boolean success = dbAccess.insertLostItem((ItemLost)lostItem);
-            
+            boolean success = dbAccess.insertLostItem((ItemLost) lostItem);
+
             if(success){
-                JOptionPane.showMessageDialog(this, "Report sent successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-                
+                JOptionPane.showMessageDialog(this, "Lost Item report submitted successfully for verification!", "Success", JOptionPane.INFORMATION_MESSAGE);
+
                 Dashboard dashboard = new Dashboard();
                 dashboard.setVisible(true);
                 this.dispose();
             } else {
-                JOptionPane.showMessageDialog(this, "Database entry failed.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Database execution error", "Error", JOptionPane.ERROR_MESSAGE);
             }
-            
-        } catch(DateTimeParseException e){
-            JOptionPane.showConfirmDialog(this, "Please input your data using format: YYYY-MM-DD", "Date Format Error", JOptionPane.ERROR_MESSAGE);
+
+        } catch (DateTimeParseException e){
+            JOptionPane.showMessageDialog(this, "Please input your date using this format: yyyy-mm-dd", "Date Format Error", JOptionPane.ERROR_MESSAGE);
+        } catch (IllegalArgumentException e){
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Input Rule Error", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_submitBtnActionPerformed
+    }//GEN-LAST:event_submitBtn1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -340,8 +348,8 @@ public class ReportLostItem extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backBtn;
-    private javax.swing.JButton browseBtn;
+    private javax.swing.JButton backBtn1;
+    private javax.swing.JButton browseBtn1;
     private javax.swing.JComboBox<String> categoryDropDown;
     private javax.swing.JLabel categoryLabel;
     private javax.swing.JLabel colorLabel;
@@ -349,19 +357,19 @@ public class ReportLostItem extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField datelostTextField;
     private javax.swing.JLabel descriptionLabel;
     private javax.swing.JTextField descriptionTextField;
-    private javax.swing.JButton homeBtn;
+    private javax.swing.JButton homeBtn1;
     private javax.swing.JLabel itemnameLabel;
     private javax.swing.JTextField itemnameTextField;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField lastseenTextField;
-    private javax.swing.JButton logoutBtn;
-    private javax.swing.JButton searchBtn;
-    private javax.swing.JButton submitBtn;
-    private javax.swing.JButton userserviceBtn;
+    private javax.swing.JButton logoutBtn1;
+    private javax.swing.JButton searchBtn1;
+    private javax.swing.JButton submitBtn1;
+    private javax.swing.JButton userserviceBtn1;
     // End of variables declaration//GEN-END:variables
 }
