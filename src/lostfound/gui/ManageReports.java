@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package lostfound.gui;
 
 import javax.swing.JOptionPane;
@@ -9,10 +6,7 @@ import lostfound.da.ClaimDA;
 import lostfound.da.ItemDA;
 import lostfound.session.SessionManager;
 
-/**
- *
- * @author danis
- */
+
 public class ManageReports extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ManageReports.class.getName());
@@ -106,7 +100,6 @@ public class ManageReports extends javax.swing.JFrame {
         jPanel1.add(refreshBtn);
         refreshBtn.setBounds(1760, 130, 110, 30);
 
-        reportsTable.setForeground(new java.awt.Color(255, 255, 255));
         reportsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},

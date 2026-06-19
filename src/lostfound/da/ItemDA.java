@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package lostfound.da;
 
 import java.sql.Connection;
@@ -13,10 +10,7 @@ import lostfound.db.DBConnection;
 import lostfound.model.Item;
 import lostfound.model.ItemFound;
 import lostfound.model.ItemLost;
-/**
- *
- * @author danis
- */
+
 public class ItemDA {
     
     public DefaultTableModel getAllItemsTableModel() {

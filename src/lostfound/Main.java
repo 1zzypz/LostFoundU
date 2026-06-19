@@ -19,7 +19,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 
-//phase 2. untuk run console based
+////phase 2. untuk run console based
 //public class Main {
 //
 //    public static void main(String[] args) {

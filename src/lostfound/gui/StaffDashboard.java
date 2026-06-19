@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package lostfound.gui;
 
 import javax.swing.JOptionPane;
@@ -9,10 +6,7 @@ import lostfound.da.ClaimDA;
 import lostfound.da.ItemDA;
 import lostfound.session.SessionManager;
 
-/**
- *
- * @author danis
- */
+
 public class StaffDashboard extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(StaffDashboard.class.getName());

@@ -1,3 +1,5 @@
+//aidiel
+//aggregation dgn item, claim request untuk generate report
 package lostfound.model;
 
 import java.time.LocalDate;

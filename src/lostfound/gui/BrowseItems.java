@@ -2,10 +2,7 @@ package lostfound.gui;
 
 import lostfound.da.ItemDA;
 import lostfound.session.SessionManager;
-/**
- *
- * @author izzati-GUI MASTER!!!
- */
+
 public class BrowseItems extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BrowseItems.class.getName());

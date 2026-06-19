@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package lostfound.model;
 
 import java.time.LocalDate;
 
-/**
- *
- * @author danis
- */
+
 public class ItemFactory {
     public static Item createItem(String itemType, String itemName, String description, 
                                   Category category, String color, String location, 
